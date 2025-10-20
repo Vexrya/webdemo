@@ -731,7 +731,7 @@ a {
 /* Hover vs tap behavior (keeps the desktop shimmer, mobile press) */
 @media (hover: hover) and (pointer: fine) {
   .hero--bistro .btn-primary:hover { transform: translateY(-2px); }
-  .hero--bistro .btn-outline:hover { background: var(--white); color: var(--black); }
+  .hero--bistro .btn-outline:hover { background: var(--black); color: var(--white); }
 }
 @media (hover: none) and (pointer: coarse) {
   .hero--bistro .btn:active { transform: scale(0.96); }
@@ -808,8 +808,8 @@ a {
 
 .btn-outline {
   background: transparent;
-  border: 2px solid var(--white);
-  color: var(--white);
+  border: 2px solid var(--black);
+  color: var(--black);
 }
 
 .btn-outline:hover {
