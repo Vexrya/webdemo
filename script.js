@@ -1077,13 +1077,7 @@ class PerformanceMonitor {
     }
 
     reportMetrics() {
-        const domTime = this.metrics.domReady - this.metrics.loadStart;
         const loadTime = this.metrics.loadComplete - this.metrics.loadStart;
-
-        console.log(`Performance Metrics:
-            DOM Ready: ${domTime.toFixed(2)}ms
-            Load Complete: ${loadTime.toFixed(2)}ms
-        `);
 
         // Report to analytics if available
         if (typeof gtag !== 'undefined') {
@@ -1129,7 +1123,6 @@ class VAMA9App {
             window.appState = this.state;
 
             this.isInitialized = true;
-            console.log('VAMA9 App initialized successfully');
         } catch (error) {
             console.error('App initialization failed:', error);
             this.state.showErrorMessage('Aplicația nu s-a putut inițializa corect. Te rugăm să reîmprospătezi pagina.');
@@ -1149,77 +1142,6 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
     }, 800); // slightly longer than shimmer animation
   }, { passive: true });
 });
-
-
-// Move the animated underline under the hovered/active link
-const navGroup = document.querySelector('.nav-group');
-const underline = document.querySelector('.nav-underline');
-if (navGroup && underline) {
-  const positionUnderline = (el) => {
-    const r = el.getBoundingClientRect();
-    const groupR = navGroup.getBoundingClientRect();
-    underline.style.left = `${r.left - groupR.left}px`;
-    underline.style.width = `${r.width}px`;
-  };
-
-  // Set underline to current active nav-link on load
-  const active = document.querySelector('.nav-group .nav-link.active') || document.querySelector('.nav-group .nav-link');
-  if (active) positionUnderline(active);
-
-  // Hover/Focus moves the underline (desktop only)
-  if (window.matchMedia('(hover: hover)').matches) {
-    navGroup.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('mouseenter', () => positionUnderline(link));
-      link.addEventListener('focus', () => positionUnderline(link));
-    });
-  }
-
-  // Update on resize
-  window.addEventListener('resize', () => {
-    const current = document.querySelector('.nav-group .nav-link.active') || document.querySelector('.nav-group .nav-link:hover');
-    if (current) positionUnderline(current);
-  });
-}
-
-// Mobile sheet toggle (reuses your .nav-toggle)
-const toggle = document.querySelector('.nav-toggle');
-const sheet  = document.querySelector('.nav-sheet');
-if (toggle && sheet) {
-  toggle.addEventListener('click', () => {
-    toggle.classList.toggle('active');
-    sheet.classList.toggle('active');
-  });
-  sheet.addEventListener('click', (e) => {
-    if (e.target === sheet) {
-      toggle.classList.remove('active');
-      sheet.classList.remove('active');
-    }
-  });
-}
-
-
-// Mobile drawer toggle
-const navToggle = document.getElementById('navToggle');
-const navMenu   = document.getElementById('navMenu');
-
-if (navToggle && navMenu) {
-  navToggle.addEventListener('click', () => {
-    const open = navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active', open);
-    navToggle.setAttribute('aria-expanded', String(open));
-    document.documentElement.style.overflow = open ? 'hidden' : '';
-  });
-
-  // close when clicking a link
-  navMenu.querySelectorAll('a.nav-link').forEach(a => {
-    a.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      navToggle.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.documentElement.style.overflow = '';
-    });
-  });
-}
 
 // Initialize app when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
