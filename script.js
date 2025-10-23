@@ -75,9 +75,10 @@ const translations = {
         nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Rezervări',
         
         // Hero Section
-        hero_badge: 'UN POPAS MODERN', hero_subtitle: 'Locul unde călătoria devine experiență',
-        hero_cuisine: 'Bucătărie Internațională', hero_terrace: 'Terasă Spațioasă', 
-        hero_parking: 'Parcare Gratuită', hero_explore: 'Explorează Meniul', hero_call: 'Sună Acum',
+        hero_title: 'VAMA9',
+        hero_subtitle: 'Experiență Culinară Modernă',
+        hero_cta: 'Rezervă Masă',
+        hero_scroll: 'Scroll',
         
         // About Section
         about_badge: 'POVESTEA NOASTRĂ', about_title: 'Un Loc de Întâlnire Modern',
@@ -134,9 +135,10 @@ const translations = {
         nav_gallery: 'Gallery', nav_contact: 'Contact', nav_reserve: 'Reservations',
         
         // Hero Section
-        hero_badge: 'A MODERN STOP', hero_subtitle: 'Where journey becomes experience',
-        hero_cuisine: 'International Cuisine', hero_terrace: 'Spacious Terrace', 
-        hero_parking: 'Free Parking', hero_explore: 'Explore Menu', hero_call: 'Call Now',
+        hero_title: 'VAMA9',
+        hero_subtitle: 'Modern Dining Experience',
+        hero_cta: 'Reserve Table',
+        hero_scroll: 'Scroll',
         
         // About Section
         about_badge: 'OUR STORY', about_title: 'A Modern Meeting Place',
@@ -193,9 +195,10 @@ const translations = {
         nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Réservations',
         
         // Hero Section
-        hero_badge: 'UN ARRÊT MODERNE', hero_subtitle: 'Où le voyage devient expérience',
-        hero_cuisine: 'Cuisine Internationale', hero_terrace: 'Terrasse Spacieuse', 
-        hero_parking: 'Parking Gratuit', hero_explore: 'Explorer le Menu', hero_call: 'Appeler Maintenant',
+        hero_title: 'VAMA9',
+        hero_subtitle: 'Expérience Culinaire Moderne',
+        hero_cta: 'Réserver une Table',
+        hero_scroll: 'Défiler',
         
         // About Section
         about_badge: 'NOTRE HISTOIRE', about_title: 'Un Lieu de Rencontre Moderne',
@@ -582,7 +585,12 @@ class NavigationManager {
     handleScroll() {
         const currentScroll = window.pageYOffset;
 
-        // Navbar scroll effect removed per user request
+        // Add scrolled class for glass-morphism effect
+        if (currentScroll > 50) {
+            this.elements.navbar?.classList.add('scrolled');
+        } else {
+            this.elements.navbar?.classList.remove('scrolled');
+        }
 
         // Update active navigation link
         this.updateActiveNavLink();
@@ -1129,19 +1137,6 @@ class VAMA9App {
         }
     }
 }
-
-// === Button Shimmer Tap Effect (Mobile) ===
-document.querySelectorAll('.btn-primary').forEach(btn => {
-  btn.addEventListener('touchstart', () => {
-    // add a class that triggers shimmer
-    btn.classList.add('tap-shimmer');
-
-    // remove after animation so it's reusable
-    setTimeout(() => {
-      btn.classList.remove('tap-shimmer');
-    }, 800); // slightly longer than shimmer animation
-  }, { passive: true });
-});
 
 // Initialize app when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
