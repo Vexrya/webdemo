@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VAMA9 | Restaurant Modern | Sighetu Marmației</title>
     <meta name="description" content="VAMA9 - Un loc de popas modern pe drumul tău. Restaurant cu terasă spațioasă, bucătărie internațională și atmosferă contemporană în Sighetu Marmației.">
-    <meta name="keywords" content="vama9, restaurant, sighet, maramureș, terasă, modern, bucătărie internațională">
+    <meta name="keywords" content="vama9, restaurant sighet, restaurant maramureș, restaurant modern, terasă restaurant, bucătărie internațională, restaurant DN18, restaurant vama, restaurant strada teplitei">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://vama9.ro">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:url" content="https://vama9.ro">
+    <meta property="og:title" content="VAMA9 - Restaurant Modern în Sighetu Marmației">
+    <meta property="og:description" content="Bucătărie internațională, terasă spațioasă și parcare gratuită. Deschiși zilnic 06:00-23:00">
+    <meta property="og:image" content="https://vama9.ro/Media/outdoor.jpg">
+    <meta property="og:locale" content="ro_RO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vama9.ro">
+    <meta name="twitter:title" content="VAMA9 - Restaurant Modern">
+    <meta name="twitter:description" content="Restaurant modern cu bucătărie internațională în Sighetu Marmației">
+    <meta name="twitter:image" content="https://vama9.ro/Media/outdoor.jpg">
+
+    <!-- Local Business -->
+    <meta name="geo.region" content="RO-MM">
+    <meta name="geo.placename" content="Sighetu Marmației">
+    <meta name="geo.position" content="47.9316;23.8906">
+    <meta name="ICBM" content="47.9316, 23.8906">
     
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +36,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Fonts with font-display swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome with defer -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -154,35 +175,21 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-      <section id="home" class="hero hero--bistro">
-            <!-- Media/overlay uses your existing background image; swap to a food/terrace shot when you have it -->
-            <div class="hero-overlay hero-overlay--bottom" aria-hidden="true"></div>
+        <section id="home" class="hero hero--fullscreen">
+            <div class="hero-overlay" aria-hidden="true"></div>
 
             <div class="hero-content">
-                <span class="hero-badge">Un popas modern</span>
+                <h1 class="hero-title" data-translate="hero_title">VAMA9</h1>
+                <p class="hero-subtitle" data-translate="hero_subtitle">Modern Dining Experience</p>
 
-                <h1 class="hero-title">
-                VAMA<span class="accent">9</span>
-                </h1>
-
-                <p class="hero-subtitle">
-                Bucătărie internațională într-o atmosferă modernă
-                </p>
-
-                <ul class="hero-features hero-features--compact">
-                <li class="feature-chip"><i class="fas fa-utensils"></i><span>Bucătărie</span></li>
-                <li class="feature-chip"><i class="fas fa-umbrella-beach"></i><span>Terasă</span></li>
-                <li class="feature-chip"><i class="fas fa-parking"></i><span>Parcare</span></li>
-                </ul>
-
-                <div class="hero-actions">
-                <a href="#reservation" class="btn btn-primary">
-                    Rezervă o masă <i class="fas fa-arrow-right"></i>
+                <a href="tel:+40749557541" class="btn btn-primary hero-cta">
+                    <span data-translate="hero_cta">Rezervă Masă</span>
                 </a>
-                <a href="#menu" class="btn btn-outline">
-                    Vezi meniul
-                </a>
-                </div>
+            </div>
+
+            <div class="hero-scroll-indicator">
+                <span data-translate="hero_scroll">Scroll</span>
+                <i class="fas fa-chevron-down"></i>
             </div>
         </section>
 
@@ -254,19 +261,19 @@
                     <div class="about-visual">
                         <div class="visual-grid">
                             <div class="visual-item large">
-                                <img src="Media/Interior.jpg" alt="Interiorul modern al restaurantului VAMA9" loading="lazy">
+                                <img src="Media/Interior.jpg" alt="Interiorul modern al restaurantului VAMA9" width="600" height="800" loading="lazy">
                                 <div class="visual-overlay">
                                     <span data-translate="about_interior">Interior Modern</span>
                                 </div>
                             </div>
                             <div class="visual-item">
-                                <img src="Media/outdoor.jpg" alt="Terasa exterioară VAMA9" loading="lazy">
+                                <img src="Media/outdoor.jpg" alt="Terasa exterioară VAMA9" width="600" height="400" loading="lazy">
                                 <div class="visual-overlay">
                                     <span data-translate="about_terrace">Terasă</span>
                                 </div>
                             </div>
                             <div class="visual-item">
-                                <img src="Media/3.jpg" alt="Preparate culinare la VAMA9" loading="lazy">
+                                <img src="Media/3.jpg" alt="Preparate culinare la VAMA9" width="600" height="400" loading="lazy">
                                 <div class="visual-overlay">
                                     <span data-translate="about_food">Mâncare</span>
                                 </div>
