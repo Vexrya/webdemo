@@ -76,7 +76,7 @@ const translations = {
         
         // Hero Section
         hero_title: 'VAMA9',
-        hero_subtitle: 'Experiență Culinară Modernă',
+        hero_subtitle: 'Unde mâncarea se întâlnește cu arta',
         hero_cta: 'Rezervă Masă',
         hero_scroll: 'Scroll',
         
@@ -136,7 +136,7 @@ const translations = {
         
         // Hero Section
         hero_title: 'VAMA9',
-        hero_subtitle: 'Modern Dining Experience',
+        hero_subtitle: 'Where Food Meets Artistry',
         hero_cta: 'Reserve Table',
         hero_scroll: 'Scroll',
         
@@ -196,7 +196,7 @@ const translations = {
         
         // Hero Section
         hero_title: 'VAMA9',
-        hero_subtitle: 'Expérience Culinaire Moderne',
+        hero_subtitle: 'Où la Nourriture Rencontre l\'Art',
         hero_cta: 'Réserver une Table',
         hero_scroll: 'Défiler',
         
