@@ -1688,22 +1688,20 @@ section {
     }
 
     .nav-menu {
-        position: fixed;
-        top: 90px;
-        left: -100%;
-        width: calc(100% - 20px);
-        max-height: calc(100vh - 110px);
-        background: var(--white);
-        flex-direction: column;
-        padding: var(--spacing-lg);
-        transition: var(--transition-base);
-        border-radius: var(--radius-lg);
-        z-index: var(--z-dropdown);
-        margin: 0 10px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        overflow-y: auto;
-        height: auto;
-        align-items: stretch;
+       position: fixed;
+       top: 90px;
+       left: -100%;
+       width: calc(100% - 20px);
+       max-height: calc(100vh - 110px);
+       background: var(--white);
+       flex-direction: column;
+       padding: var(--spacing-lg);
+       transition: var(--transition-base);
+       border-radius: var(--radius-lg);
+       z-index: var(--z-dropdown);
+       margin: 0 10px;
+       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+       overflow-y: auto;
     }
 
     .nav-menu li {
@@ -2220,6 +2218,7 @@ section {
 /* =====================================
    END OF OPTIMIZED STYLES
    ===================================== */
+
 
 
 
