@@ -484,8 +484,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 50%, #f3f4f6 100%);
-  color: var(--black);
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Media/outdoor.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--white);
   text-align: center;
   padding: var(--spacing-xl) var(--spacing-lg);
   padding-top: calc(var(--spacing-xl) + 80px);
@@ -520,17 +524,19 @@ a {
   letter-spacing: 0.05em;
   margin-bottom: var(--spacing-md);
   line-height: 0.95;
-  color: var(--black);
+  color: var(--white);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
   font-family: var(--font-body);
   font-size: clamp(1.25rem, 3vw, 2.25rem);
   font-weight: 300;
-  color: var(--dark-grey);
+  color: var(--white);
   margin-bottom: var(--spacing-xl);
   letter-spacing: 0.05em;
   line-height: 1.4;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-cta {
@@ -575,6 +581,7 @@ a {
   .hero {
     padding: var(--spacing-lg) var(--spacing-md);
     padding-top: calc(var(--spacing-lg) + 80px);
+    background-attachment: scroll;
   }
 
   .hero-title {
