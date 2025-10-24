@@ -1687,29 +1687,6 @@ section {
         width: calc(100% - 20px);
     }
 
-    .nav-container {
-        height: 70px;
-    }
-
-    .nav-brand .brand-text {
-        font-size: 2rem;
-    }
-
-    .nav-actions {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-sm);
-    }
-
-    .nav-cta-large {
-        padding: 0.65rem 1.25rem;
-        font-size: 0.9rem;
-    }
-
-    .nav-toggle {
-        display: flex;
-    }
-
     .nav-menu {
         position: fixed;
         top: 90px;
@@ -1725,12 +1702,6 @@ section {
         margin: 0 10px;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         overflow-y: auto;
-        height: auto;
-    }
-
-    .nav-menu li {
-        width: 100%;
-        height: auto;
     }
 
     .nav-menu .nav-link {
@@ -1739,8 +1710,6 @@ section {
         padding: var(--spacing-sm) 0;
         border-bottom: 1px solid var(--light-grey);
         width: 100%;
-        height: auto;
-        justify-content: flex-start;
     }
 
     .nav-menu .nav-link:hover,
@@ -1750,6 +1719,10 @@ section {
 
     .nav-menu.active {
         left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
     }
 
 
