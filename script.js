@@ -75,9 +75,10 @@ const translations = {
         nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Rezervări',
         
         // Hero Section
-        hero_title: 'VAMA9',
-        hero_subtitle: 'Unde mâncarea se întâlnește cu arta',
-        hero_cta: 'Rezervă Masă',
+        hero_tagline: 'Unde fiecare masă devine artă',
+        hero_headline: 'Savurează<br>Momentul',
+        hero_menu: 'Meniul',
+        hero_gallery: 'Gallery',
         hero_scroll: 'Scroll',
         
         // About Section
@@ -135,9 +136,10 @@ const translations = {
         nav_gallery: 'Gallery', nav_contact: 'Contact', nav_reserve: 'Reservations',
         
         // Hero Section
-        hero_title: 'VAMA9',
-        hero_subtitle: 'Where Food Meets Artistry',
-        hero_cta: 'Reserve Table',
+        hero_tagline: 'Where every meal becomes art',
+        hero_headline: 'Savor<br>The Moment',
+        hero_menu: 'Menu',
+        hero_gallery: 'Gallery',
         hero_scroll: 'Scroll',
         
         // About Section
@@ -195,9 +197,10 @@ const translations = {
         nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Réservations',
         
         // Hero Section
-        hero_title: 'VAMA9',
-        hero_subtitle: 'Où la Nourriture Rencontre l\'Art',
-        hero_cta: 'Réserver une Table',
+        hero_tagline: 'Où chaque repas devient art',
+        hero_headline: 'Savourez<br>L\'Instant',
+        hero_menu: 'Menu',
+        hero_gallery: 'Galerie',
         hero_scroll: 'Défiler',
         
         // About Section
@@ -789,6 +792,7 @@ class MenuManager {
         this.showingAll = false;
         this.currentCategory = 'all';
         this.isInitialized = false;
+        this.savedScrollPosition = 0;
     }
 
     init() {
@@ -894,8 +898,11 @@ class MenuManager {
 
     toggleShowMore() {
         this.showingAll = !this.showingAll;
-        
+
         if (this.showingAll) {
+            // Save scroll position before expanding
+            this.savedScrollPosition = window.pageYOffset;
+
             // Show all items
             this.menuItems.forEach(item => {
                 if (item.dataset.category === this.currentCategory || this.currentCategory === 'all') {
@@ -913,6 +920,14 @@ class MenuManager {
                     count++;
                 }
             });
+
+            // Restore scroll position smoothly after collapse
+            setTimeout(() => {
+                window.scrollTo({
+                    top: this.savedScrollPosition,
+                    behavior: 'smooth'
+                });
+            }, CONFIG.ANIMATION_DURATION);
         }
 
         this.updateShowMoreButton(this.showingAll);

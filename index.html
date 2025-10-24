@@ -138,30 +138,9 @@
             </ul>
             
             <div class="nav-actions">
-                <div class="language-dropdown" id="language-dropdown">
-                    <button class="lang-switcher" id="lang-switcher" aria-label="Schimbă limba" aria-expanded="false" aria-haspopup="menu">
-                        <i class="fas fa-globe" aria-hidden="true"></i>
-                        <span id="current-lang">RO</span>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </button>
-                    <div class="language-menu" id="language-menu" role="menu" aria-labelledby="lang-switcher">
-                        <button class="lang-option" data-lang="ro" role="menuitem" aria-label="Română">
-                            <span class="flag" aria-hidden="true">🇷🇴</span>
-                            <span>Română</span>
-                        </button>
-                        <button class="lang-option" data-lang="en" role="menuitem" aria-label="English">
-                            <span class="flag" aria-hidden="true">🇬🇧</span>
-                            <span>English</span>
-                        </button>
-                        <button class="lang-option" data-lang="fr" role="menuitem" aria-label="Français">
-                            <span class="flag" aria-hidden="true">🇫🇷</span>
-                            <span>Français</span>
-                        </button>
-                    </div>
-                </div>
-                <a href="tel:+40749557541" class="nav-cta" aria-label="Sună pentru rezervări">
-                    <i class="fas fa-phone" aria-hidden="true"></i>
-                    <span data-translate="nav_reserve">Rezervări</span>
+                <a href="tel:+40749557541" class="nav-cta nav-cta-large" aria-label="Sună pentru rezervări">
+                    <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                    <span data-translate="nav_reserve">Rezervarii</span>
                 </a>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Deschide meniul" aria-expanded="false" aria-controls="nav-menu">
                     <span aria-hidden="true"></span>
@@ -179,108 +158,24 @@
             <div class="hero-overlay" aria-hidden="true"></div>
 
             <div class="hero-content">
-                <h1 class="hero-title" data-translate="hero_title">VAMA9</h1>
-                <p class="hero-subtitle" data-translate="hero_subtitle">Modern Dining Experience</p>
+                <p class="hero-tagline" data-translate="hero_tagline">Unde fiecare masă devine artă</p>
+                <h1 class="hero-headline" data-translate="hero_headline">Savurează<br>Momentul</h1>
 
-                <a href="tel:+40749557541" class="btn btn-primary hero-cta">
-                    <span data-translate="hero_cta">Rezervă Masă</span>
-                </a>
+                <div class="hero-actions">
+                    <a href="#menu" class="btn btn-hero-primary">
+                        <span data-translate="hero_menu">Meniul</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#gallery" class="btn btn-hero-secondary">
+                        <span data-translate="hero_gallery">Gallery</span>
+                        <i class="fas fa-images"></i>
+                    </a>
+                </div>
             </div>
 
             <div class="hero-scroll-indicator">
                 <span data-translate="hero_scroll">Scroll</span>
                 <i class="fas fa-chevron-down"></i>
-            </div>
-        </section>
-
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-content">
-                        <header class="section-header">
-                            <span class="section-badge" data-translate="about_badge">POVESTEA NOASTRĂ</span>
-                            <h2 class="section-title" data-translate="about_title">Un Loc de Întâlnire Modern</h2>
-                        </header>
-                        
-                        <p class="about-lead" data-translate="about_lead">
-                            Situat strategic lângă vama nouă, VAMA9 reprezintă mai mult decât un restaurant - este un punct de conexiune între călători și localnici, între tradiție și modernitate.
-                        </p>
-                        
-                        <div class="about-features">
-                            <article class="about-feature">
-                                <div class="feature-icon" aria-hidden="true">
-                                    <i class="fas fa-route"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h3 data-translate="about_journey_title">Călătorie & Conexiune</h3>
-                                    <p data-translate="about_journey_text">Un popas modern pentru călători, unde fiecare masă devine o experiență memorabilă.</p>
-                                </div>
-                            </article>
-                            
-                            <article class="about-feature">
-                                <div class="feature-icon" aria-hidden="true">
-                                    <i class="fas fa-building"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h3 data-translate="about_design_title">Design Contemporary</h3>
-                                    <p data-translate="about_design_text">Arhitectură minimalistă care îmbină eleganța cu funcționalitatea.</p>
-                                </div>
-                            </article>
-                            
-                            <article class="about-feature">
-                                <div class="feature-icon" aria-hidden="true">
-                                    <i class="fas fa-leaf"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h3 data-translate="about_fresh_title">Prospețime & Calitate</h3>
-                                    <p data-translate="about_fresh_text">Ingrediente proaspete și preparate cu atenție la detalii.</p>
-                                </div>
-                            </article>
-                        </div>
-                        
-                        <div class="about-stats" role="group" aria-label="Informații program">
-                            <div class="stat">
-                                <span class="stat-number">06:00</span>
-                                <span class="stat-label" data-translate="about_open">Deschidem</span>
-                            </div>
-                            <div class="stat-divider" aria-hidden="true"></div>
-                            <div class="stat">
-                                <span class="stat-number">23:00</span>
-                                <span class="stat-label" data-translate="about_close">Închidem</span>
-                            </div>
-                            <div class="stat-divider" aria-hidden="true"></div>
-                            <div class="stat">
-                                <span class="stat-number">7/7</span>
-                                <span class="stat-label" data-translate="about_days">Zile</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="about-visual">
-                        <div class="visual-grid">
-                            <div class="visual-item large">
-                                <img src="Media/Interior.jpg" alt="Interiorul modern al restaurantului VAMA9" width="600" height="800" loading="lazy">
-                                <div class="visual-overlay">
-                                    <span data-translate="about_interior">Interior Modern</span>
-                                </div>
-                            </div>
-                            <div class="visual-item">
-                                <img src="Media/afara_vama9.jpg" alt="Terasa exterioară VAMA9" width="600" height="400" loading="lazy">
-                                <div class="visual-overlay">
-                                    <span data-translate="about_terrace">Terasă</span>
-                                </div>
-                            </div>
-                            <div class="visual-item">
-                                <img src="Media/3.jpg" alt="Preparate culinare la VAMA9" width="600" height="400" loading="lazy">
-                                <div class="visual-overlay">
-                                    <span data-translate="about_food">Mâncare</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -512,6 +407,96 @@
                         <i class="fas fa-phone" aria-hidden="true"></i>
                         <span data-translate="menu_cta_button">Contactează-ne</span>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <header class="section-header">
+                            <span class="section-badge" data-translate="about_badge">POVESTEA NOASTRĂ</span>
+                            <h2 class="section-title" data-translate="about_title">Un Loc de Întâlnire Modern</h2>
+                        </header>
+
+                        <p class="about-lead" data-translate="about_lead">
+                            Situat strategic lângă vama nouă, VAMA9 reprezintă mai mult decât un restaurant - este un punct de conexiune între călători și localnici, între tradiție și modernitate.
+                        </p>
+
+                        <div class="about-features">
+                            <article class="about-feature">
+                                <div class="feature-icon" aria-hidden="true">
+                                    <i class="fas fa-route"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h3 data-translate="about_journey_title">Călătorie & Conexiune</h3>
+                                    <p data-translate="about_journey_text">Un popas modern pentru călători, unde fiecare masă devine o experiență memorabilă.</p>
+                                </div>
+                            </article>
+
+                            <article class="about-feature">
+                                <div class="feature-icon" aria-hidden="true">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h3 data-translate="about_design_title">Design Contemporary</h3>
+                                    <p data-translate="about_design_text">Arhitectură minimalistă care îmbină eleganța cu funcționalitatea.</p>
+                                </div>
+                            </article>
+
+                            <article class="about-feature">
+                                <div class="feature-icon" aria-hidden="true">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h3 data-translate="about_fresh_title">Prospețime & Calitate</h3>
+                                    <p data-translate="about_fresh_text">Ingrediente proaspete și preparate cu atenție la detalii.</p>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="about-stats" role="group" aria-label="Informații program">
+                            <div class="stat">
+                                <span class="stat-number">06:00</span>
+                                <span class="stat-label" data-translate="about_open">Deschidem</span>
+                            </div>
+                            <div class="stat-divider" aria-hidden="true"></div>
+                            <div class="stat">
+                                <span class="stat-number">23:00</span>
+                                <span class="stat-label" data-translate="about_close">Închidem</span>
+                            </div>
+                            <div class="stat-divider" aria-hidden="true"></div>
+                            <div class="stat">
+                                <span class="stat-number">7/7</span>
+                                <span class="stat-label" data-translate="about_days">Zile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-visual">
+                        <div class="visual-grid">
+                            <div class="visual-item large">
+                                <img src="Media/Interior.jpg" alt="Interiorul modern al restaurantului VAMA9" width="600" height="800" loading="lazy">
+                                <div class="visual-overlay">
+                                    <span data-translate="about_interior">Interior Modern</span>
+                                </div>
+                            </div>
+                            <div class="visual-item">
+                                <img src="Media/afara_vama9.jpg" alt="Terasa exterioară VAMA9" width="600" height="400" loading="lazy">
+                                <div class="visual-overlay">
+                                    <span data-translate="about_terrace">Terasă</span>
+                                </div>
+                            </div>
+                            <div class="visual-item">
+                                <img src="Media/3.jpg" alt="Preparate culinare la VAMA9" width="600" height="400" loading="lazy">
+                                <div class="visual-overlay">
+                                    <span data-translate="about_food">Mâncare</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
