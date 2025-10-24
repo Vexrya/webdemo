@@ -634,16 +634,11 @@ class GalleryManager {
         this.images = [];
         this.lightboxElement = null;
         this.isInitialized = false;
-        this.touchStartX = 0;
-        this.touchEndX = 0;
-        this.touchStartY = 0;
-        this.touchEndY = 0;
-        this.minSwipeDistance = 50;
     }
 
     init() {
         if (this.isInitialized) return;
-
+        
         this.bindEvents();
         this.setupAccessibility();
         this.isInitialized = true;
@@ -651,7 +646,7 @@ class GalleryManager {
 
     bindEvents() {
         const galleryItems = document.querySelectorAll('.gallery-item');
-
+        
         galleryItems.forEach((item, index) => {
             item.addEventListener('click', () => this.openLightbox(index));
             item.addEventListener('keydown', this.handleGalleryKeydown.bind(this, index));
@@ -718,7 +713,6 @@ class GalleryManager {
         const closeBtn = lightbox.querySelector('.lightbox-close');
         const prevBtn = lightbox.querySelector('.lightbox-prev');
         const nextBtn = lightbox.querySelector('.lightbox-next');
-        const lightboxContent = lightbox.querySelector('.lightbox-content');
 
         // Close events
         const closeLightbox = () => {
@@ -738,20 +732,6 @@ class GalleryManager {
         // Navigation
         prevBtn?.addEventListener('click', () => this.navigateLightbox(-1, lightbox));
         nextBtn?.addEventListener('click', () => this.navigateLightbox(1, lightbox));
-
-        // Touch/Swipe events for mobile
-        if (lightboxContent) {
-            lightboxContent.addEventListener('touchstart', (e) => {
-                this.touchStartX = e.changedTouches[0].screenX;
-                this.touchStartY = e.changedTouches[0].screenY;
-            }, { passive: true });
-
-            lightboxContent.addEventListener('touchend', (e) => {
-                this.touchEndX = e.changedTouches[0].screenX;
-                this.touchEndY = e.changedTouches[0].screenY;
-                this.handleSwipeGesture(lightbox);
-            }, { passive: true });
-        }
     
         // Keyboard navigation
         const handleKeydown = (e) => {
@@ -785,26 +765,9 @@ class GalleryManager {
         observer.observe(document.body, { childList: true });
     }
 
-    handleSwipeGesture(lightbox) {
-        const diffX = this.touchEndX - this.touchStartX;
-        const diffY = this.touchEndY - this.touchStartY;
-
-        // Only process horizontal swipes (ignore mostly vertical swipes)
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-            // Swipe left (next image)
-            if (diffX < -this.minSwipeDistance) {
-                this.navigateLightbox(1, lightbox);
-            }
-            // Swipe right (previous image)
-            else if (diffX > this.minSwipeDistance) {
-                this.navigateLightbox(-1, lightbox);
-            }
-        }
-    }
-
     navigateLightbox(direction, lightbox) {
         if (this.images.length <= 1) return;
-
+        
         this.currentIndex += direction;
         if (this.currentIndex < 0) this.currentIndex = this.images.length - 1;
         if (this.currentIndex >= this.images.length) this.currentIndex = 0;
@@ -812,13 +775,8 @@ class GalleryManager {
         const img = lightbox.querySelector('img');
         const newImage = this.images[this.currentIndex];
         if (img) {
-            // Add smooth transition
-            img.style.opacity = '0';
-            setTimeout(() => {
-                img.src = newImage.src;
-                img.alt = newImage.alt;
-                img.style.opacity = '1';
-            }, 150);
+            img.src = newImage.src;
+            img.alt = newImage.alt;
         }
     }
 }
