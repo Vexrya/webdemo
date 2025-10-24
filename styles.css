@@ -1702,6 +1702,13 @@ section {
         margin: 0 10px;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         overflow-y: auto;
+        height: auto;
+        align-items: stretch;
+    }
+
+    .nav-menu li {
+        height: auto;
+        width: 100%;
     }
 
     .nav-menu .nav-link {
@@ -1710,6 +1717,7 @@ section {
         padding: var(--spacing-sm) 0;
         border-bottom: 1px solid var(--light-grey);
         width: 100%;
+        height: auto;
     }
 
     .nav-menu .nav-link:hover,
@@ -2212,4 +2220,6 @@ section {
 /* =====================================
    END OF OPTIMIZED STYLES
    ===================================== */
+
+
 
