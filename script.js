@@ -76,7 +76,8 @@ const translations = {
         
         // Hero Section
         hero_tagline: 'Unde fiecare masă devine artă',
-        hero_headline: 'Savurează<br>Momentul',
+        hero_headline_line1: 'Savurează',
+        hero_headline_line2: 'Momentul',
         hero_menu: 'Meniul',
         hero_gallery: 'Gallery',
         hero_scroll: 'Scroll',
@@ -137,7 +138,8 @@ const translations = {
         
         // Hero Section
         hero_tagline: 'Where every meal becomes art',
-        hero_headline: 'Savor<br>The Moment',
+        hero_headline_line1: 'Savor',
+        hero_headline_line2: 'The Moment',
         hero_menu: 'Menu',
         hero_gallery: 'Gallery',
         hero_scroll: 'Scroll',
@@ -198,7 +200,8 @@ const translations = {
         
         // Hero Section
         hero_tagline: 'Où chaque repas devient art',
-        hero_headline: 'Savourez<br>L\'Instant',
+        hero_headline_line1: 'Savourez',
+        hero_headline_line2: 'L\'Instant',
         hero_menu: 'Menu',
         hero_gallery: 'Galerie',
         hero_scroll: 'Défiler',
