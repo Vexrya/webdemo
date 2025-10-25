@@ -1,22 +1,17 @@
 /* =====================================
-   MENU PAGE - MINIMAL & CLEAN DESIGN
-   Mobile-Optimized for QR Code Viewing
+   MENU PAGE - MOBILE-FIRST QR CODE OPTIMIZED
    ===================================== */
 
-/* =====================================
-   HEADER - BIGGER & MORE TOUCH-FRIENDLY
-   ===================================== */
-
+/* Menu Header */
 .menu-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
-    padding: 1.25rem 1.5rem;
-    min-height: 70px;
+    padding: 1rem;
 }
 
 .menu-header-container {
@@ -25,71 +20,58 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
 }
 
 .menu-logo .brand-text {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.25rem;
+    font-size: 2rem;
     color: #0f0f0f;
     letter-spacing: 2px;
-    line-height: 1;
 }
 
 .back-home {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    color: #fff;
-    background: #059669;
+    gap: 0.5rem;
+    color: #059669;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
-    padding: 0.875rem 1.5rem;
-    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
     transition: all 0.2s;
-    min-height: 48px;
-    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.2);
 }
 
-.back-home i {
-    font-size: 1.1rem;
+.back-home:hover {
+    background: rgba(5, 150, 105, 0.1);
 }
 
-.back-home:hover,
-.back-home:active {
-    background: #047857;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
-}
-
-/* =====================================
-   CATEGORY NAVIGATION - CLEANER & BIGGER
-   ===================================== */
-
+/* Category Navigation */
 .category-nav {
     position: fixed;
-    top: 70px;
+    top: 65px;
     left: 0;
     right: 0;
-    background: #fff;
-    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+    border-bottom: 2px solid #e5e7eb;
     z-index: 99;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .category-nav::-webkit-scrollbar {
     display: none;
 }
 
+.category-nav.sticky {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
 .category-nav-container {
     display: flex;
-    gap: 0.5rem;
-    padding: 1rem 1.5rem;
+    gap: 0.25rem;
+    padding: 0.75rem;
     max-width: 1200px;
     margin: 0 auto;
     min-width: min-content;
@@ -99,27 +81,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    padding: 0.75rem 1.25rem;
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
     text-decoration: none;
     color: #2d2d2d;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     white-space: nowrap;
     transition: all 0.2s;
     flex-shrink: 0;
-    min-height: 48px;
-    min-width: 70px;
 }
 
 .cat-link i {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     color: #059669;
-    transition: all 0.2s;
 }
 
 .cat-link:hover,
@@ -127,145 +105,119 @@
     background: #059669;
     color: #fff;
     border-color: #059669;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(5, 150, 105, 0.2);
 }
 
 .cat-link:hover i,
 .cat-link:active i {
     color: #fff;
-    transform: scale(1.1);
 }
 
-/* =====================================
-   MAIN CONTENT - MORE BREATHING ROOM
-   ===================================== */
-
+/* Main Content */
 .menu-page-content {
-    padding-top: 160px;
+    padding-top: 140px;
     min-height: 100vh;
-    background: #fafafa;
-    padding-bottom: 3rem;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
 }
 
 .menu-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 1rem;
 }
 
-/* =====================================
-   PAGE HEADER - MINIMAL & CLEAN
-   ===================================== */
-
+/* Page Header */
 .menu-page-header {
     text-align: center;
-    padding: 2.5rem 1rem 2rem;
-    margin-bottom: 2.5rem;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
 }
 
 .menu-page-header h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    font-size: clamp(2rem, 8vw, 3rem);
     color: #0f0f0f;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    letter-spacing: 1px;
+    gap: 0.5rem;
 }
 
 .menu-page-header h1 i {
     color: #059669;
-    font-size: 0.9em;
 }
 
 .menu-subtitle {
     color: #666;
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
-/* =====================================
-   CATEGORY SECTIONS - CLEAN SEPARATION
-   ===================================== */
-
+/* Category Sections */
 .menu-category {
-    margin-bottom: 4rem;
-    scroll-margin-top: 170px;
+    margin-bottom: 3rem;
+    scroll-margin-top: 150px;
 }
 
 .category-header {
-    background: #0f0f0f;
+    background: linear-gradient(135deg, #059669 0%, #34d399 100%);
     color: #fff;
-    padding: 1.25rem 1.5rem;
+    padding: 1rem 1.25rem;
     border-radius: 12px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
 }
 
 .category-header h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    font-size: clamp(1.5rem, 5vw, 2rem);
     margin: 0;
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
-.category-header h2 i {
-    color: #059669;
-}
-
-/* =====================================
-   MENU ITEM CARDS - CLEAN & SPACIOUS
-   ===================================== */
-
+/* Menu Item Cards */
 .menu-item-card {
     background: #fff;
-    border: 1px solid #e5e7eb;
+    border: 2px solid #e5e7eb;
     border-radius: 12px;
-    padding: 1.75rem;
-    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
     transition: all 0.2s;
-}
-
-.menu-item-card:last-child {
-    margin-bottom: 0;
 }
 
 .menu-item-card:hover {
     border-color: #059669;
-    box-shadow: 0 4px 16px rgba(5, 150, 105, 0.08);
-    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);
 }
 
 .menu-item-card.featured {
     border-color: #059669;
-    border-width: 2px;
+    background: linear-gradient(135deg, rgba(5, 150, 105, 0.03) 0%, rgba(52, 211, 153, 0.05) 100%);
 }
 
 .item-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-bottom: 0.75rem;
 }
 
 .item-header h3 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: #0f0f0f;
     margin: 0;
     flex: 1;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 .item-price {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: #059669;
     font-weight: 400;
     white-space: nowrap;
@@ -274,40 +226,37 @@
 
 .item-description {
     color: #666;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 0.75rem 0;
 }
 
 .item-meta {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #f0f0f0;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e5e7eb;
 }
 
 .calories {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     color: #666;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
 }
 
 .calories i {
     color: #f59e0b;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
-/* =====================================
-   TABLE LAYOUT - CLEAN & READABLE
-   ===================================== */
-
+/* Menu Table Layout */
 .menu-table {
     background: #fff;
-    border: 1px solid #e5e7eb;
+    border: 2px solid #e5e7eb;
     border-radius: 12px;
     overflow: hidden;
 }
@@ -315,11 +264,10 @@
 .table-row {
     display: grid;
     grid-template-columns: 1fr auto auto;
-    gap: 1.5rem;
-    padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid #f0f0f0;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
     align-items: center;
-    transition: background 0.2s;
 }
 
 .table-row:last-child {
@@ -327,258 +275,195 @@
 }
 
 .table-row:hover {
-    background: #fafafa;
+    background: rgba(5, 150, 105, 0.03);
 }
 
 .table-cell {
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 .table-cell.item-name {
     font-weight: 600;
     color: #0f0f0f;
-    line-height: 1.4;
 }
 
 .table-cell.item-price {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     color: #059669;
     font-weight: 400;
-    letter-spacing: 0.5px;
 }
 
 .table-cell.item-calories {
     color: #666;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     text-align: right;
 }
 
-/* =====================================
-   FOOTER INFO - MINIMAL
-   ===================================== */
-
+/* Footer Info */
 .menu-footer-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin: 4rem 0 3rem;
-    padding: 2rem;
-    background: #fff;
-    border: 1px solid #e5e7eb;
+    gap: 1rem;
+    margin: 3rem 0 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 12px;
 }
 
 .info-card {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1rem;
 }
 
 .info-card i {
-    font-size: 2.25rem;
+    font-size: 2rem;
     color: #059669;
 }
 
 .info-card div {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.25rem;
 }
 
 .info-card strong {
     color: #0f0f0f;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .info-card a,
 .info-card span {
     color: #666;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.95rem;
 }
 
 .info-card a:hover {
     color: #059669;
+    text-decoration: underline;
 }
 
-/* =====================================
-   FOOTER - MINIMAL
-   ===================================== */
-
+/* Menu Footer */
 .menu-footer {
     background: #0f0f0f;
     color: #fff;
     text-align: center;
     padding: 2rem 1rem;
-    border-top: 1px solid #e5e7eb;
 }
 
 .menu-footer p {
     margin: 0;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     color: #999;
 }
 
 /* =====================================
-   RESPONSIVE - MOBILE OPTIMIZED
+   RESPONSIVE DESIGN
    ===================================== */
 
 /* Tablet */
 @media (max-width: 768px) {
     .menu-header {
-        padding: 1rem 1.25rem;
-        min-height: 65px;
+        padding: 0.75rem;
     }
 
     .menu-logo .brand-text {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
-    .back-home {
-        padding: 0.75rem 1.25rem;
-        font-size: 0.95rem;
-        gap: 0.5rem;
+    .back-home span {
+        display: none;
     }
 
     .category-nav {
-        top: 65px;
-    }
-
-    .category-nav-container {
-        padding: 0.875rem 1.25rem;
-        gap: 0.4rem;
+        top: 60px;
     }
 
     .cat-link {
-        padding: 0.625rem 1rem;
-        font-size: 0.75rem;
-        min-width: 65px;
+        font-size: 0.7rem;
+        padding: 0.4rem 0.75rem;
     }
 
     .cat-link i {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     .menu-page-content {
-        padding-top: 150px;
-    }
-
-    .menu-container {
-        padding: 0 1.25rem;
+        padding-top: 130px;
     }
 
     .menu-footer-info {
         grid-template-columns: 1fr;
-        padding: 1.5rem;
     }
 
     .table-row {
         grid-template-columns: 1fr;
         gap: 0.5rem;
-        padding: 1rem 1.25rem;
+    }
+
+    .table-cell.item-name {
+        font-size: 1rem;
+    }
+
+    .table-cell.item-price {
+        font-size: 1.4rem;
     }
 
     .table-cell.item-calories {
         text-align: left;
+        font-size: 0.8rem;
     }
 }
 
-/* Mobile - BIGGER EVERYTHING */
+/* Mobile */
 @media (max-width: 480px) {
-    .menu-header {
-        padding: 1rem;
-        min-height: 70px;
-    }
-
-    .menu-logo .brand-text {
-        font-size: 1.5rem;
-    }
-
-    .back-home {
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .back-home span {
-        display: inline;
-    }
-
-    .category-nav-container {
-        padding: 0.75rem 1rem;
-    }
-
     .menu-container {
-        padding: 0 1rem;
+        padding: 0.75rem;
     }
 
     .menu-page-header {
-        padding: 2rem 0.5rem 1.5rem;
-        margin-bottom: 2rem;
+        padding: 1.5rem 0.75rem;
+        margin-bottom: 1.5rem;
     }
 
     .category-header {
-        padding: 1rem 1.25rem;
+        padding: 0.75rem 1rem;
     }
 
     .menu-item-card {
-        padding: 1.5rem;
-    }
-
-    .item-header {
-        gap: 1rem;
+        padding: 1rem;
     }
 
     .item-header h3 {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 
     .item-price {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .item-description {
-        font-size: 0.95rem;
-    }
-
-    .menu-footer-info {
-        padding: 1.25rem;
+        font-size: 0.9rem;
     }
 
     .info-card i {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .info-card strong {
-        font-size: 0.875rem;
+        font-size: 0.85rem;
     }
 
     .info-card a,
     .info-card span {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
 
-/* Extra Small Mobile */
-@media (max-width: 360px) {
-    .back-home span {
-        display: none;
-    }
-
-    .cat-link {
-        min-width: 60px;
-        padding: 0.5rem 0.75rem;
-    }
-}
-
-/* =====================================
-   PRINT STYLES
-   ===================================== */
-
+/* Print Styles for Menu */
 @media print {
     .menu-header,
     .category-nav,
@@ -588,7 +473,6 @@
 
     .menu-page-content {
         padding-top: 0;
-        background: #fff;
     }
 
     .menu-container {
@@ -604,23 +488,40 @@
         page-break-inside: avoid;
     }
 
+    body {
+        background: #fff;
+    }
+
     .category-header {
-        background: #0f0f0f;
+        background: #059669;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 }
 
-/* =====================================
-   ACCESSIBILITY
-   ===================================== */
+/* Landscape Orientation */
+@media (orientation: landscape) and (max-height: 500px) {
+    .menu-page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .category-header h2 {
+        font-size: 1.25rem;
+    }
+}
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-    .cat-link,
-    .menu-item-card,
-    .menu-table {
-        border-width: 2px;
+    .cat-link {
+        border-width: 3px;
+    }
+
+    .menu-item-card {
+        border-width: 3px;
+    }
+
+    .category-header {
+        border: 3px solid #047857;
     }
 }
 
@@ -634,13 +535,4 @@
     html {
         scroll-behavior: auto;
     }
-}
-
-/* Focus states for accessibility */
-.cat-link:focus,
-.back-home:focus,
-.menu-item-card:focus,
-.info-card a:focus {
-    outline: 3px solid #059669;
-    outline-offset: 2px;
 }
