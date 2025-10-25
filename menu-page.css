@@ -36,13 +36,18 @@
     color: #059669;
     text-decoration: none;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 8px;
     transition: all 0.2s;
+    min-height: 44px;
 }
 
 .back-home:hover {
     background: rgba(5, 150, 105, 0.1);
+}
+
+.back-home i {
+    font-size: 1.1rem;
 }
 
 /* Category Navigation */
@@ -82,17 +87,18 @@
     flex-direction: column;
     align-items: center;
     gap: 0.25rem;
-    padding: 0.5rem 1rem;
+    padding: 0.65rem 1.1rem;
     background: #fff;
     border: 2px solid #e5e7eb;
     border-radius: 8px;
     text-decoration: none;
     color: #2d2d2d;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 600;
     white-space: nowrap;
     transition: all 0.2s;
     flex-shrink: 0;
+    min-height: 44px;
 }
 
 .cat-link i {
@@ -374,8 +380,9 @@
         font-size: 1.5rem;
     }
 
-    .back-home span {
-        display: none;
+    .back-home {
+        padding: 0.65rem 1rem;
+        font-size: 0.9rem;
     }
 
     .category-nav {
@@ -383,12 +390,13 @@
     }
 
     .cat-link {
-        font-size: 0.7rem;
-        padding: 0.4rem 0.75rem;
+        font-size: 0.75rem;
+        padding: 0.6rem 0.9rem;
+        min-height: 48px;
     }
 
     .cat-link i {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
 
     .menu-page-content {
