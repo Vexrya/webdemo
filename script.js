@@ -1115,6 +1115,38 @@ class PerformanceMonitor {
     }
 }
 
+// Viewport Height Fix for Mobile
+class ViewportHeightFix {
+    constructor() {
+        this.isInitialized = false;
+    }
+
+    init() {
+        if (this.isInitialized) return;
+
+        // Set initial viewport height
+        this.setViewportHeight();
+
+        // Update on resize (throttled)
+        const throttledResize = utils.throttle(this.setViewportHeight.bind(this), 250);
+        window.addEventListener('resize', throttledResize);
+
+        // Update on orientation change
+        window.addEventListener('orientationchange', () => {
+            setTimeout(this.setViewportHeight.bind(this), 100);
+        });
+
+        this.isInitialized = true;
+    }
+
+    setViewportHeight() {
+        // Calculate actual viewport height
+        const vh = window.innerHeight * 0.01;
+        // Set CSS custom property
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+}
+
 // Main Application (Optimized)
 class VAMA9App {
     constructor() {
@@ -1125,11 +1157,15 @@ class VAMA9App {
 
     async init() {
         if (this.isInitialized) return;
-        
+
         try {
             // Initialize performance monitoring
             this.performance = new PerformanceMonitor();
             this.performance.init();
+
+            // Initialize viewport height fix for mobile
+            this.viewportFix = new ViewportHeightFix();
+            this.viewportFix.init();
 
             // Initialize core modules
             this.modules.language = new LanguageManager(this.state);
