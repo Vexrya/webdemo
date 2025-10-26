@@ -104,8 +104,9 @@ html {
 
 body {
     font-family: var(--font-body);
+    font-size: 1.0625rem; /* 17px for better readability */
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--charcoal);
     background: var(--white);
     overflow-x: hidden;
@@ -156,12 +157,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5em;
 }
 
-h1 { font-size: clamp(3rem, 8vw, 6rem); }
-h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
-h5 { font-size: clamp(1.125rem, 2vw, 1.25rem); }
-h6 { font-size: clamp(1rem, 1.5vw, 1.125rem); }
+h1 { font-size: clamp(3rem, 5vw, 3.5rem); } /* 48-56px */
+h2 { font-size: clamp(1.75rem, 3vw, 2rem); } /* 28-32px */
+h3 { font-size: clamp(1.5rem, 2.5vw, 1.75rem); } /* 24-28px */
+h4 { font-size: clamp(1.25rem, 2vw, 1.5rem); } /* 20-24px */
+h5 { font-size: clamp(1.125rem, 1.5vw, 1.25rem); } /* 18-20px */
+h6 { font-size: clamp(1rem, 1.25vw, 1.125rem); } /* 16-18px */
 
 p {
     margin-bottom: 1rem;
@@ -1380,6 +1381,55 @@ section {
     overflow: hidden;
 }
 
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(5, 150, 105, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-base);
+    pointer-events: none;
+}
+
+.map-container:hover .map-overlay {
+    background: rgba(5, 150, 105, 0.15);
+}
+
+.map-overlay-content {
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-base);
+}
+
+.map-container:hover .map-overlay-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-overlay-content i {
+    font-size: 2rem;
+    color: var(--accent-primary);
+}
+
+.map-overlay-content p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--dark-grey);
+    font-size: 1rem;
+}
+
 .map-placeholder {
     width: 100%;
     height: 100%;
@@ -2216,6 +2266,72 @@ section {
     contain: layout;
 }
 
+
+/* =====================================
+   MOBILE STICKY ACTION BAR
+   ===================================== */
+
+.mobile-sticky-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: 1px solid var(--light-grey);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    z-index: var(--z-fixed);
+    padding: 0.5rem 0;
+}
+
+.sticky-action {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.75rem 0.5rem;
+    text-decoration: none;
+    color: var(--dark-grey);
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: var(--transition-fast);
+    min-height: 60px;
+}
+
+.sticky-action i {
+    font-size: 1.25rem;
+    color: var(--accent-primary);
+    transition: var(--transition-fast);
+}
+
+.sticky-action:hover,
+.sticky-action:active {
+    background: var(--off-white);
+    color: var(--accent-primary);
+}
+
+.sticky-action:hover i,
+.sticky-action:active i {
+    transform: scale(1.1);
+}
+
+.sticky-call {
+    background: linear-gradient(135deg, rgba(5, 150, 105, 0.05) 0%, rgba(52, 211, 153, 0.08) 100%);
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+    .mobile-sticky-bar {
+        display: flex;
+    }
+
+    /* Add padding to body to account for sticky bar */
+    body {
+        padding-bottom: 70px;
+    }
+}
 
 /* =====================================
    END OF OPTIMIZED STYLES

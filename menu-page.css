@@ -134,8 +134,14 @@
 /* Page Header */
 .menu-page-header {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .menu-page-header {
+        padding: 1.5rem 1rem;
+    }
 }
 
 .menu-page-header h1 {
@@ -306,16 +312,6 @@
     text-align: right;
 }
 
-/* Footer Info */
-.menu-footer-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin: 3rem 0 2rem;
-    padding: 1.5rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 12px;
-}
 
 .info-card {
     display: flex;

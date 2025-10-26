@@ -82,13 +82,19 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "VAMA9",
-        "description": "Restaurant modern cu bucătărie internațională în Sighetu Marmației",
+        "alternateName": "Vama 9",
+        "description": "Restaurant modern cu bucătărie internațională în Sighetu Marmației. Oferim pizza, preparate din carne la grătar, platouri și deserturi delicioase.",
         "url": "https://vama9.ro",
         "telephone": "+40749557541",
+        "image": [
+            "https://vama9.ro/Media/afara_vama9.jpg",
+            "https://vama9.ro/Media/Interior.jpg"
+        ],
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Strada Teplitei 66",
             "addressLocality": "Sighetu Marmației",
+            "addressRegion": "Maramureș",
             "postalCode": "435500",
             "addressCountry": "RO"
         },
@@ -98,10 +104,15 @@
             "longitude": "23.8906"
         },
         "openingHours": "Mo-Su 06:00-23:00",
-        "servesCuisine": "International",
+        "servesCuisine": ["International", "Romanian", "Pizza", "Grill"],
         "priceRange": "$$",
-        "acceptsReservations": true,
-        "hasMenu": "https://vama9.ro#menu",
+        "acceptsReservations": "EventsOnly",
+        "hasMenu": "https://vama9.ro/menu.html",
+        "paymentAccepted": ["Cash", "Credit Card"],
+        "currenciesAccepted": "RON",
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61576052340245"
+        ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",
@@ -109,8 +120,13 @@
                 "value": true
             },
             {
-                "@type": "LocationFeatureSpecification", 
-                "name": "afara_vama9 Seating",
+                "@type": "LocationFeatureSpecification",
+                "name": "Outdoor Seating",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Terrace",
                 "value": true
             }
         ]
@@ -138,9 +154,9 @@
             </ul>
             
             <div class="nav-actions">
-                <a href="tel:+40749557541" class="nav-cta nav-cta-large" aria-label="Sună pentru rezervări">
+                <a href="tel:+40749557541" class="nav-cta nav-cta-large" aria-label="Sună pentru evenimente speciale">
                     <i class="fas fa-calendar-check" aria-hidden="true"></i>
-                    <span data-translate="nav_reserve">Rezervarii</span>
+                    <span data-translate="nav_reserve">Evenimente</span>
                 </a>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Deschide meniul" aria-expanded="false" aria-controls="nav-menu">
                     <span aria-hidden="true"></span>
@@ -170,7 +186,7 @@
                         <i class="fas fa-arrow-right"></i>
                     </a>
                     <a href="#gallery" class="btn btn-hero-secondary">
-                        <span data-translate="hero_gallery">Gallery</span>
+                        <span data-translate="hero_gallery">Galerie</span>
                         <i class="fas fa-images"></i>
                     </a>
                 </div>
@@ -493,14 +509,6 @@
                         <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </button>
                 </div>
-                
-                <div class="menu-cta">
-                    <p data-translate="menu_cta_text">Pentru meniul complet și prețuri actualizate</p>
-                    <a href="menu.html" class="btn btn-primary">
-                        <i class="fas fa-utensils" aria-hidden="true"></i>
-                        <span data-translate="menu_cta_button">Vezi Meniul Complet</span>
-                    </a>
-                </div>
             </div>
         </section>
 
@@ -608,7 +616,7 @@
                         <div class="contact-buttons">
                             <a href="tel:+40749557541" class="btn btn-primary">
                                 <i class="fas fa-phone" aria-hidden="true"></i>
-                                <span data-translate="contact_call">Sună pentru rezervare</span>
+                                <span data-translate="contact_call">Sună pentru evenimente</span>
                             </a>
                             <button class="btn btn-outline" onclick="openMap()" aria-label="Deschide indicațiile către restaurant">
                                 <i class="fas fa-directions" aria-hidden="true"></i>
@@ -618,10 +626,22 @@
                     </div>
                     
                     <div class="contact-map">
-                        <div class="map-container">
-                            <div class="map-placeholder" role="button" tabindex="0" onclick="openMap()" onkeydown="if(event.key==='Enter'||event.key===' ')openMap()" aria-label="Deschide harta pentru Restaurant VAMA9">
-                                <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
-                                <p data-translate="contact_map_text">Click pentru a deschide harta</p>
+                        <div class="map-container" onclick="openMap()" style="cursor: pointer;">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d681.5895808947185!2d23.938857769698177!3d47.939129400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4737bbfe90e20f49%3A0xfca2fca726822577!2sVAMa%209!5e0!3m2!1sen!2sro!4v1709823456789!5m2!1sen!2sro"
+                                width="600"
+                                height="450"
+                                style="border:0; width: 100%; height: 100%; border-radius: 12px; pointer-events: none;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Locația restaurantului VAMA9 pe Google Maps">
+                            </iframe>
+                            <div class="map-overlay">
+                                <div class="map-overlay-content">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <p>Click pentru direcții</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -662,6 +682,22 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Sticky Action Bar -->
+    <div class="mobile-sticky-bar" id="mobile-sticky-bar">
+        <a href="tel:+40749557541" class="sticky-action sticky-call">
+            <i class="fas fa-phone"></i>
+            <span>Sună</span>
+        </a>
+        <a href="menu.html" class="sticky-action sticky-menu">
+            <i class="fas fa-utensils"></i>
+            <span>Meniu</span>
+        </a>
+        <a href="#contact" class="sticky-action sticky-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Locație</span>
+        </a>
+    </div>
 
     <!-- Back to Top -->
     <button class="back-to-top" id="back-to-top" aria-label="Înapoi sus">

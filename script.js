@@ -71,16 +71,16 @@ const utils = {
 const translations = {
     ro: {
         // Navigation
-        nav_home: 'Acasă', nav_about: 'Despre', nav_menu: 'Meniu', 
-        nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Rezervări',
-        
+        nav_home: 'Acasă', nav_about: 'Despre', nav_menu: 'Meniu',
+        nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Evenimente',
+
         // Hero Section
         hero_tagline: 'Unde fiecare masă devine artă',
         hero_headline_line1: 'Savurează',
         hero_headline_line2: 'Momentul',
         hero_menu: 'Meniul',
-        hero_gallery: 'Gallery',
-        hero_scroll: 'Scroll',
+        hero_gallery: 'Galerie',
+        hero_scroll: 'Derulează',
         
         // About Section
         about_badge: 'POVESTEA NOASTRĂ', about_title: 'Un Loc de Întâlnire Modern',
@@ -123,7 +123,7 @@ const translations = {
         // Contact Section
         contact_badge: 'CONTACT', contact_title: 'Vino să ne cunoști', contact_address: 'Adresă',
         contact_hours: 'Program', contact_schedule: 'Zilnic: 06:00 - 23:00', contact_phone: 'Telefon',
-        contact_call: 'Sună pentru rezervare', contact_directions: 'Direcții',
+        contact_call: 'Sună pentru evenimente', contact_directions: 'Direcții',
         contact_map_text: 'Click pentru a deschide harta',
         
         // Footer
@@ -133,8 +133,8 @@ const translations = {
     },
     en: {
         // Navigation
-        nav_home: 'Home', nav_about: 'About', nav_menu: 'Menu', 
-        nav_gallery: 'Gallery', nav_contact: 'Contact', nav_reserve: 'Reservations',
+        nav_home: 'Home', nav_about: 'About', nav_menu: 'Menu',
+        nav_gallery: 'Gallery', nav_contact: 'Contact', nav_reserve: 'Events',
         
         // Hero Section
         hero_tagline: 'Where every meal becomes art',
@@ -185,7 +185,7 @@ const translations = {
         // Contact Section
         contact_badge: 'CONTACT', contact_title: 'Come meet us', contact_address: 'Address',
         contact_hours: 'Hours', contact_schedule: 'Daily: 06:00 - 23:00', contact_phone: 'Phone',
-        contact_call: 'Call for reservation', contact_directions: 'Directions',
+        contact_call: 'Call for events', contact_directions: 'Directions',
         contact_map_text: 'Click to open map',
         
         // Footer
@@ -195,8 +195,8 @@ const translations = {
     },
     fr: {
         // Navigation
-        nav_home: 'Accueil', nav_about: 'À propos', nav_menu: 'Menu', 
-        nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Réservations',
+        nav_home: 'Accueil', nav_about: 'À propos', nav_menu: 'Menu',
+        nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Événements',
         
         // Hero Section
         hero_tagline: 'Où chaque repas devient art',
@@ -248,7 +248,7 @@ const translations = {
         contact_badge: 'CONTACT',
         contact_title: 'Venez nous rencontrer', contact_address: 'Adresse',
         contact_hours: 'Heures', contact_schedule: 'Quotidien: 06:00 - 23:00', contact_phone: 'Téléphone',
-        contact_call: 'Appeler pour réservation', contact_directions: 'Directions',
+        contact_call: 'Appeler pour événements', contact_directions: 'Directions',
         contact_map_text: 'Cliquez pour ouvrir la carte',
         
         // Footer
