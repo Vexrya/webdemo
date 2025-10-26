@@ -299,7 +299,7 @@
             </div>
         </section>
 
-        <!-- Menu Section -->
+        <!-- Menu Section - Highlights Preview -->
         <section id="menu" class="menu">
             <div class="container">
                 <header class="section-header text-center">
@@ -309,216 +309,147 @@
                         O selecție diversă de preparate pentru toate gusturile
                     </p>
                 </header>
-                
-                <div class="menu-categories" role="tablist" aria-label="Categorii meniu">
-                    <button class="category-btn active" data-category="all" role="tab" aria-selected="true" aria-controls="menu-grid">
-                        <i class="fas fa-th" aria-hidden="true"></i>
-                        <span data-translate="menu_all">Toate</span>
-                    </button>
-                    <button class="category-btn" data-category="breakfast" role="tab" aria-selected="false" aria-controls="menu-grid">
-                        <i class="fas fa-coffee" aria-hidden="true"></i>
-                        <span data-translate="menu_breakfast">Mic Dejun</span>
-                    </button>
-                    <button class="category-btn" data-category="main" role="tab" aria-selected="false" aria-controls="menu-grid">
-                        <i class="fas fa-utensils" aria-hidden="true"></i>
-                        <span data-translate="menu_main">Fel Principal</span>
-                    </button>
-                    <button class="category-btn" data-category="pizza" role="tab" aria-selected="false" aria-controls="menu-grid">
-                        <i class="fas fa-pizza-slice" aria-hidden="true"></i>
-                        <span>Pizza</span>
-                    </button>
-                    <button class="category-btn" data-category="dessert" role="tab" aria-selected="false" aria-controls="menu-grid">
-                        <i class="fas fa-ice-cream" aria-hidden="true"></i>
-                        <span data-translate="menu_dessert">Desert</span>
-                    </button>
-                    <button class="category-btn" data-category="drinks" role="tab" aria-selected="false" aria-controls="menu-grid">
-                        <i class="fas fa-cocktail" aria-hidden="true"></i>
-                        <span data-translate="menu_drinks">Băuturi</span>
-                    </button>
-                </div>
-                
-                <div class="menu-grid" id="menu-grid" role="tabpanel" aria-live="polite">
-                    <!-- Loading skeleton for better UX -->
-                    <div class="menu-loading" id="menu-loading" aria-hidden="true">
-                        <div class="skeleton-item"></div>
-                        <div class="skeleton-item"></div>
-                        <div class="skeleton-item"></div>
-                        <div class="skeleton-item"></div>
+
+                <!-- Menu Highlights Grid - Simple, no images required -->
+                <div class="menu-simple-grid">
+                    <!-- Breakfast Category -->
+                    <div class="menu-category-card">
+                        <div class="menu-category-header">
+                            <i class="fas fa-coffee"></i>
+                            <h3 data-translate="menu_breakfast">Mic Dejun</h3>
+                        </div>
+                        <ul class="menu-simple-list">
+                            <li>
+                                <div class="menu-simple-item">
+                                    <span class="item-name" data-translate="breakfast_item1_name">Mic Dejun Tradițional</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">25 RON</span>
+                                </div>
+                                <p class="item-desc" data-translate="breakfast_item1_desc">Ouă, bacon, cârnat, roșii, pâine prăjită</p>
+                            </li>
+                            <li>
+                                <div class="menu-simple-item">
+                                    <span class="item-name" data-translate="breakfast_item2_name">Omletă cu Brânză</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">18 RON</span>
+                                </div>
+                                <p class="item-desc" data-translate="breakfast_item2_desc">Ouă proaspete, brânză locală, verdeață</p>
+                            </li>
+                        </ul>
                     </div>
-                    
-                    <!-- Breakfast Items -->
-                    <article class="menu-item" data-category="breakfast">
-                        <div class="menu-item-image">
-                            <img src="Media/1.jpg" alt="Mic dejun tradițional cu ouă, bacon și pâine prăjită" loading="lazy">
-                            <span class="menu-badge" data-translate="menu_popular">Popular</span>
-                        </div>
-                        <div class="menu-item-content">
-                            <h3 data-translate="breakfast_item1_name">Mic Dejun Tradițional</h3>
-                            <p data-translate="breakfast_item1_desc">Ouă, bacon, cârnat, roșii, pâine prăjită</p>
-                            <div class="menu-item-footer">
-                                <span class="menu-price" aria-label="Preț: 25 lei">25 RON</span>
-                                <button class="menu-action" aria-label="Mai multe informații despre Mic Dejun Tradițional">
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
 
-                    <article class="menu-item" data-category="breakfast">
-                        <div class="menu-item-image">
-                            <img src="Media/2.jpg" alt="Omletă cu brânză locală și verdeață proaspătă" loading="lazy">
+                    <!-- Main Course Category -->
+                    <div class="menu-category-card">
+                        <div class="menu-category-header">
+                            <i class="fas fa-utensils"></i>
+                            <h3 data-translate="menu_main">Fel Principal</h3>
                         </div>
-                        <div class="menu-item-content">
-                            <h3 data-translate="breakfast_item2_name">Omletă cu Brânză</h3>
-                            <p data-translate="breakfast_item2_desc">Ouă proaspete, brânză locală, verdeață</p>
-                            <div class="menu-item-footer">
-                                <span class="menu-price" aria-label="Preț: 18 lei">18 RON</span>
-                                <button class="menu-action" aria-label="Mai multe informații despre Omletă cu Brânză">
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
+                        <ul class="menu-simple-list">
+                            <li>
+                                <div class="menu-simple-item">
+                                    <span class="item-name" data-translate="menu_item1_name">Grătar Mixt</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">45 RON</span>
+                                </div>
+                                <p class="item-desc" data-translate="menu_item1_desc">Selecție de carne la grătar cu garnitură</p>
+                            </li>
+                            <li>
+                                <div class="menu-simple-item">
+                                    <span class="item-name" data-translate="main_item2_name">Ciorbă de Burtă</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">22 RON</span>
+                                </div>
+                                <p class="item-desc" data-translate="main_item2_desc">Tradițională, cu smântână și ardei iute</p>
+                            </li>
+                            <li>
+                                <div class="menu-simple-item">
+                                    <span class="item-name" data-translate="main_item3_name">Sarmale cu Mămăligă</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">32 RON</span>
+                                </div>
+                                <p class="item-desc" data-translate="main_item3_desc">Sarmale în foi de varză, mămăligă, smântână</p>
+                            </li>
+                        </ul>
+                    </div>
 
-                    <!-- Main Course Items -->
-                    <article class="menu-item" data-category="main">
-                        <div class="menu-item-image">
-                            <img src="Media/3.jpg" alt="Grătar mixt cu selecție de carne și garnitură" loading="lazy">
-                            <span class="menu-badge" data-translate="menu_popular">Popular</span>
+                    <!-- Pizza Category -->
+                    <div class="menu-category-card">
+                        <div class="menu-category-header">
+                            <i class="fas fa-pizza-slice"></i>
+                            <h3>Pizza</h3>
                         </div>
-                        <div class="menu-item-content">
-                            <h3 data-translate="menu_item1_name">Grătar Mixt</h3>
-                            <p data-translate="menu_item1_desc">Selecție de carne la grătar cu garnitură</p>
-                            <div class="menu-item-footer">
-                                <span class="menu-price" aria-label="Preț: 45 lei">45 RON</span>
-                                <button class="menu-action" aria-label="Mai multe informații despre Grătar Mixt">
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <article class="menu-item" data-category="main">
-                        <div class="menu-item-image">
-                            <img src="Media/4.jpg" alt="Ciorbă de burtă tradițională cu smântână și ardei iute" loading="lazy">
-                        </div>
-                        <div class="menu-item-content">
-                            <h3 data-translate="main_item2_name">Ciorbă de Burtă</h3>
-                            <p data-translate="main_item2_desc">Tradițională, cu smântână și ardei iute</p>
-                            <div class="menu-item-footer">
-                                <span class="menu-price" aria-label="Preț: 22 lei">22 RON</span>
-                                <button class="menu-action" aria-label="Mai multe informații despre Ciorbă de Burtă">
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
+                        <ul class="menu-simple-list">
+                            <li>
+                                <div class="menu-simple-item">
+                                    <span class="item-name">Pizza Margherita</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">28 RON</span>
+                                </div>
+                                <p class="item-desc" data-translate="pizza_item1_desc">Roșii, mozzarella, busuioc proaspăt</p>
+                            </li>
+                            <li>
+                                <div class="menu-simple-item">
+                                    <span class="item-name">Pizza Quattro Stagioni</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">35 RON</span>
+                                </div>
+                                <p class="item-desc" data-translate="pizza_item2_desc">Șuncă, ciuperci, măsline, ardei</p>
+                            </li>
+                        </ul>
+                    </div>
 
-                    <article class="menu-item" data-category="main">
-                        <div class="menu-item-image">
-                            <img src="Media/5.jpg" alt="Sarmale în foi de varză cu mămăligă și smântână" loading="lazy">
+                    <!-- Dessert Category -->
+                    <div class="menu-category-card">
+                        <div class="menu-category-header">
+                            <i class="fas fa-ice-cream"></i>
+                            <h3 data-translate="menu_dessert">Desert</h3>
                         </div>
-                        <div class="menu-item-content">
-                            <h3 data-translate="main_item3_name">Sarmale cu Mămăligă</h3>
-                            <p data-translate="main_item3_desc">Sarmale în foi de varză, mămăligă, smântână</p>
-                            <div class="menu-item-footer">
-                                <span class="menu-price" aria-label="Preț: 32 lei">32 RON</span>
-                                <button class="menu-action" aria-label="Mai multe informații despre Sarmale cu Mămăligă">
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
+                        <ul class="menu-simple-list">
+                            <li>
+                                <div class="menu-simple-item">
+                                    <span class="item-name" data-translate="dessert_item1_name">Papanași</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">16 RON</span>
+                                </div>
+                                <p class="item-desc" data-translate="dessert_item1_desc">Cu smântână și dulceață de vișine</p>
+                            </li>
+                        </ul>
+                    </div>
 
-                    <!-- Pizza Items -->
-                    <article class="menu-item" data-category="pizza">
-                        <div class="menu-item-image">
-                            <img src="Media/6.jpg" alt="Pizza Margherita cu roșii, mozzarella și busuioc" loading="lazy">
+                    <!-- Drinks Category -->
+                    <div class="menu-category-card">
+                        <div class="menu-category-header">
+                            <i class="fas fa-cocktail"></i>
+                            <h3 data-translate="menu_drinks">Băuturi</h3>
                         </div>
-                        <div class="menu-item-content">
-                            <h3>Pizza Margherita</h3>
-                            <p data-translate="pizza_item1_desc">Roșii, mozzarella, busuioc proaspăt</p>
-                            <div class="menu-item-footer">
-                                <span class="menu-price" aria-label="Preț: 28 lei">28 RON</span>
-                                <button class="menu-action" aria-label="Mai multe informații despre Pizza Margherita">
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="menu-item" data-category="pizza">
-                        <div class="menu-item-image">
-                            <img src="Media/5.jpg" alt="Pizza Quattro Stagioni cu șuncă, ciuperci, măsline și ardei" loading="lazy">
-                        </div>
-                        <div class="menu-item-content">
-                            <h3>Pizza Quattro Stagioni</h3>
-                            <p data-translate="pizza_item2_desc">Șuncă, ciuperci, măsline, ardei</p>
-                            <div class="menu-item-footer">
-                                <span class="menu-price" aria-label="Preț: 35 lei">35 RON</span>
-                                <button class="menu-action" aria-label="Mai multe informații despre Pizza Quattro Stagioni">
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Dessert Items -->
-                    <article class="menu-item" data-category="dessert">
-                        <div class="menu-item-image">
-                            <img src="Media/6.jpg" alt="Papanași cu smântână și dulceață de vișine" loading="lazy">
-                        </div>
-                        <div class="menu-item-content">
-                            <h3 data-translate="dessert_item1_name">Papanași</h3>
-                            <p data-translate="dessert_item1_desc">Cu smântână și dulceață de vișine</p>
-                            <div class="menu-item-footer">
-                                <span class="menu-price" aria-label="Preț: 16 lei">16 RON</span>
-                                <button class="menu-action" aria-label="Mai multe informații despre Papanași">
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Drinks Items -->
-                    <article class="menu-item" data-category="drinks">
-                        <div class="menu-item-image">
-                            <img src="Media/2.jpg" alt="Cafea espresso proaspăt măcinată" loading="lazy">
-                        </div>
-                        <div class="menu-item-content">
-                            <h3 data-translate="drinks_item1_name">Cafea Espresso</h3>
-                            <p data-translate="drinks_item1_desc">Cafea proaspăt măcinată, aromă intensă</p>
-                            <div class="menu-item-footer">
-                                <span class="menu-price" aria-label="Preț: 8 lei">8 RON</span>
-                                <button class="menu-action" aria-label="Mai multe informații despre Cafea Espresso">
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="menu-item" data-category="drinks">
-                        <div class="menu-item-image">
-                            <img src="Media/4.jpg" alt="Țuică de Maramureș din fructe locale" loading="lazy">
-                        </div>
-                        <div class="menu-item-content">
-                            <h3 data-translate="drinks_item2_name">Țuică de Maramureș</h3>
-                            <p data-translate="drinks_item2_desc">Țuică tradițională din fructe locale</p>
-                            <div class="menu-item-footer">
-                                <span class="menu-price" aria-label="Preț: 12 lei">12 RON</span>
-                                <button class="menu-action" aria-label="Mai multe informații despre Țuică de Maramureș">
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
+                        <ul class="menu-simple-list">
+                            <li>
+                                <div class="menu-simple-item">
+                                    <span class="item-name" data-translate="drinks_item1_name">Cafea Espresso</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">8 RON</span>
+                                </div>
+                                <p class="item-desc" data-translate="drinks_item1_desc">Cafea proaspăt măcinată, aromă intensă</p>
+                            </li>
+                            <li>
+                                <div class="menu-simple-item">
+                                    <span class="item-name" data-translate="drinks_item2_name">Țuică de Maramureș</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">12 RON</span>
+                                </div>
+                                <p class="item-desc" data-translate="drinks_item2_desc">Țuică tradițională din fructe locale</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="menu-show-more" id="menu-show-more" style="display: none;">
-                    <button class="btn btn-outline" id="show-more-btn">
-                        <span data-translate="menu_show_more">Arată mai multe</span>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </button>
+
+                <!-- CTA for full menu -->
+                <div class="menu-cta">
+                    <p data-translate="menu_cta_text">Pentru meniul complet și prețuri actualizate</p>
+                    <a href="menu.html" class="btn btn-primary">
+                        <span>Vezi Meniul Complet</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </section>
@@ -740,4 +671,3 @@
 </body>
 
 </html>
-
