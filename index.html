@@ -52,25 +52,36 @@
             --font-display: 'Bebas Neue', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
-        body { 
-            font-family: var(--font-body); 
-            margin: 0; 
+        body {
+            font-family: var(--font-body);
+            margin: 0;
             overflow-x: hidden;
         }
-        .navbar { 
-            position: fixed; 
-            top: 0; 
-            width: 100%; 
-            z-index: 1000; 
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
             background: var(--white);
             height: 80px;
         }
-        .hero { 
-            min-height: 100vh; 
-            padding-top: 80px; 
-            display: flex; 
+        .hero {
+            min-height: 100vh;
+            padding-top: 80px;
+            display: flex;
             align-items: center;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
+        }
+        /* Mobile viewport height fix */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 100svh; /* Use small viewport height on mobile */
+            }
+            @supports not (height: 100svh) {
+                .hero {
+                    min-height: calc(var(--vh, 1vh) * 100);
+                }
+            }
         }
     </style>
     <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">

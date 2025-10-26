@@ -1115,6 +1115,38 @@ class PerformanceMonitor {
     }
 }
 
+// Viewport Height Fix for Mobile
+class ViewportHeightFix {
+    constructor() {
+        this.setViewportHeight();
+        this.bindEvents();
+    }
+
+    setViewportHeight() {
+        // Calculate viewport height and set CSS custom property
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    bindEvents() {
+        // Update on resize, but debounced to avoid performance issues
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                this.setViewportHeight();
+            }, 100);
+        });
+
+        // Update on orientation change
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+                this.setViewportHeight();
+            }, 100);
+        });
+    }
+}
+
 // Main Application (Optimized)
 class VAMA9App {
     constructor() {
@@ -1125,8 +1157,11 @@ class VAMA9App {
 
     async init() {
         if (this.isInitialized) return;
-        
+
         try {
+            // Fix viewport height for mobile browsers
+            this.viewportFix = new ViewportHeightFix();
+
             // Initialize performance monitoring
             this.performance = new PerformanceMonitor();
             this.performance.init();
