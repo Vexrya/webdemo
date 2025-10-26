@@ -59,8 +59,14 @@
     background: #f9fafb;
     border-bottom: 2px solid #e5e7eb;
     z-index: 99;
-    display: flex;
-    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .category-nav.sticky {
@@ -74,95 +80,6 @@
     max-width: 1200px;
     margin: 0 auto;
     min-width: min-content;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    flex: 1;
-}
-
-.category-nav-container::-webkit-scrollbar {
-    display: none;
-}
-
-/* Scroll Buttons */
-.nav-scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #059669 0%, #34d399 100%);
-    border: none;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
-    display: none;
-}
-
-.nav-scroll-btn:hover {
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
-}
-
-.nav-scroll-btn:active {
-    transform: translateY(-50%) scale(0.95);
-}
-
-.nav-scroll-left {
-    left: 10px;
-}
-
-.nav-scroll-right {
-    right: 10px;
-}
-
-/* Scroll Indicator */
-.nav-scroll-indicator {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(5, 150, 105, 0.9);
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: opacity 0.3s ease;
-    z-index: 100;
-    animation: bounce 1.5s infinite;
-}
-
-.nav-scroll-indicator i {
-    font-size: 1rem;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    50% {
-        transform: translateX(-50%) translateY(-5px);
-    }
-}
-
-/* Show scroll buttons on desktop */
-@media (min-width: 769px) {
-    .nav-scroll-btn {
-        display: block;
-    }
-    .nav-scroll-indicator {
-        display: none;
-    }
 }
 
 .cat-link {

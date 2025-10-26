@@ -36,10 +36,7 @@
 
     <!-- Quick Category Navigation -->
     <nav class="category-nav" id="categoryNav">
-        <button class="nav-scroll-btn nav-scroll-left" id="scrollLeft" aria-label="Scroll left">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="category-nav-container" id="categoryNavContainer">
+        <div class="category-nav-container">
             <a href="#platouri" class="cat-link">
                 <i class="fas fa-utensils"></i>
                 <span>Platouri</span>
@@ -76,13 +73,6 @@
                 <i class="fas fa-ice-cream"></i>
                 <span>Desert</span>
             </a>
-        </div>
-        <button class="nav-scroll-btn nav-scroll-right" id="scrollRight" aria-label="Scroll right">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-        <div class="nav-scroll-indicator">
-            <i class="fas fa-arrows-alt-h"></i>
-            <span>Derulează →</span>
         </div>
     </nav>
 
@@ -767,76 +757,6 @@
                 nav.classList.remove('sticky');
             }
         });
-
-        // Category nav scroll buttons
-        const navContainer = document.getElementById('categoryNavContainer');
-        const scrollLeftBtn = document.getElementById('scrollLeft');
-        const scrollRightBtn = document.getElementById('scrollRight');
-        const scrollIndicator = document.querySelector('.nav-scroll-indicator');
-
-        if (navContainer && scrollLeftBtn && scrollRightBtn) {
-            // Scroll left
-            scrollLeftBtn.addEventListener('click', function() {
-                navContainer.scrollBy({
-                    left: -200,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Scroll right
-            scrollRightBtn.addEventListener('click', function() {
-                navContainer.scrollBy({
-                    left: 200,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Update button visibility based on scroll position
-            function updateScrollButtons() {
-                const scrollLeft = navContainer.scrollLeft;
-                const scrollWidth = navContainer.scrollWidth;
-                const clientWidth = navContainer.clientWidth;
-
-                // Hide left button if at start
-                if (scrollLeft <= 0) {
-                    scrollLeftBtn.style.opacity = '0';
-                    scrollLeftBtn.style.pointerEvents = 'none';
-                } else {
-                    scrollLeftBtn.style.opacity = '1';
-                    scrollLeftBtn.style.pointerEvents = 'auto';
-                }
-
-                // Hide right button if at end
-                if (scrollLeft + clientWidth >= scrollWidth - 10) {
-                    scrollRightBtn.style.opacity = '0';
-                    scrollRightBtn.style.pointerEvents = 'none';
-                } else {
-                    scrollRightBtn.style.opacity = '1';
-                    scrollRightBtn.style.pointerEvents = 'auto';
-                }
-
-                // Hide scroll indicator after first interaction
-                if (scrollLeft > 10 && scrollIndicator) {
-                    scrollIndicator.style.display = 'none';
-                }
-            }
-
-            // Check scroll position on load and scroll
-            navContainer.addEventListener('scroll', updateScrollButtons);
-            window.addEventListener('resize', updateScrollButtons);
-            window.addEventListener('load', updateScrollButtons);
-            updateScrollButtons();
-
-            // Hide indicator after 5 seconds
-            setTimeout(function() {
-                if (scrollIndicator) {
-                    scrollIndicator.style.opacity = '0';
-                    setTimeout(function() {
-                        scrollIndicator.style.display = 'none';
-                    }, 300);
-                }
-            }, 5000);
-        }
     </script>
 </body>
 </html>
