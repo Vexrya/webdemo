@@ -123,7 +123,7 @@ const translations = {
         // Contact Section
         contact_badge: 'CONTACT', contact_title: 'Vino să ne cunoști', contact_address: 'Adresă',
         contact_hours: 'Program', contact_schedule: 'Zilnic: 06:00 - 23:00', contact_phone: 'Telefon',
-        contact_call: 'Sună pentru rezervare', contact_directions: 'Direcții',
+        contact_call: 'Sună pentru evenimente', contact_directions: 'Direcții',
         contact_map_text: 'Click pentru a deschide harta',
         
         // Footer
@@ -185,7 +185,7 @@ const translations = {
         // Contact Section
         contact_badge: 'CONTACT', contact_title: 'Come meet us', contact_address: 'Address',
         contact_hours: 'Hours', contact_schedule: 'Daily: 06:00 - 23:00', contact_phone: 'Phone',
-        contact_call: 'Call for reservation', contact_directions: 'Directions',
+        contact_call: 'Call for events', contact_directions: 'Directions',
         contact_map_text: 'Click to open map',
         
         // Footer
@@ -248,7 +248,7 @@ const translations = {
         contact_badge: 'CONTACT',
         contact_title: 'Venez nous rencontrer', contact_address: 'Adresse',
         contact_hours: 'Heures', contact_schedule: 'Quotidien: 06:00 - 23:00', contact_phone: 'Téléphone',
-        contact_call: 'Appeler pour réservation', contact_directions: 'Directions',
+        contact_call: 'Appeler pour événements', contact_directions: 'Directions',
         contact_map_text: 'Cliquez pour ouvrir la carte',
         
         // Footer
