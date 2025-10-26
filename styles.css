@@ -722,9 +722,30 @@ a {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .hero {
+    /* Fix for mobile viewport height changes when scrolling */
+    min-height: 100svh; /* Small viewport height - fixed height with browser UI */
+    height: auto; /* Allow content to determine height if needed */
     padding: var(--spacing-lg) var(--spacing-md);
     padding-top: calc(var(--spacing-lg) + 80px);
     background-attachment: scroll;
+  }
+
+  .hero--fullscreen {
+    /* Use small viewport height to prevent resize on scroll */
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  /* Fallback for browsers that don't support svh */
+  @supports not (height: 100svh) {
+    .hero {
+      min-height: calc(var(--vh, 1vh) * 100);
+    }
+
+    .hero--fullscreen {
+      height: calc(var(--vh, 1vh) * 100);
+      min-height: calc(var(--vh, 1vh) * 100);
+    }
   }
 
   .hero-tagline {
