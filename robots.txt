@@ -1,0 +1,53 @@
+# robots.txt for VAMA9 Restaurant Sighetu Marmației
+# https://vama9.ro
+
+User-agent: *
+Allow: /
+Allow: /menu.html
+Allow: /Media/
+Allow: /styles.css
+Allow: /script.js
+Allow: /menu-page.css
+
+# Sitemap location
+Sitemap: https://vama9.ro/sitemap.xml
+
+# Crawl-delay (optional, prevents overwhelming the server)
+Crawl-delay: 1
+
+# Block access to unnecessary files
+Disallow: /*.log
+Disallow: /*.txt$
+Disallow: /error/
+
+# Ensure all major search engines can access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /Media/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Social Media Crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /

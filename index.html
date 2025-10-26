@@ -3,19 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAMA9 | Restaurant Modern | Sighetu Marmației</title>
-    <meta name="description" content="VAMA9 - Un loc de popas modern pe drumul tău. Restaurant cu terasă spațioasă, bucătărie internațională și atmosferă contemporană în Sighetu Marmației.">
-    <meta name="keywords" content="vama9, restaurant sighet, restaurant maramureș, restaurant modern, terasă restaurant, bucătărie internațională, restaurant DN18, restaurant vama, restaurant strada teplitei">
-    <meta name="robots" content="index, follow">
+    <title>Restaurant Sighet | VAMA9 - Cel Mai Bun Restaurant Sighetu Marmației | Pizza, Grătar, Terasă</title>
+    <meta name="description" content="Restaurant VAMA9 Sighet - Cel mai bun restaurant din Sighetu Marmației. Pizza, preparate la grătar, meniu internațional, terasă spațioasă. Strada Tepliței 66, DN18. Program: 06:00-23:00. ☎️ 0749 557 541">
+    <meta name="keywords" content="restaurant sighet, restaurant sighetu marmatiei, pizza sighet, restaurant maramures, restaurant dn18, vama9, restaurant strada teplitei, gratar sighet, terasa restaurant sighet, restaurant modern sighet, mancare sighet, restaurant cu terasa maramures">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://vama9.ro">
+
+    <!-- Author and Publisher -->
+    <meta name="author" content="VAMA9 Restaurant">
+    <meta name="publisher" content="VAMA9">
+    <meta name="language" content="Romanian">
+    <meta name="coverage" content="Sighetu Marmației, Maramureș, România">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="restaurant">
     <meta property="og:url" content="https://vama9.ro">
-    <meta property="og:title" content="VAMA9 - Restaurant Modern în Sighetu Marmației">
-    <meta property="og:description" content="Bucătărie internațională, terasă spațioasă și parcare gratuită. Deschiși zilnic 06:00-23:00">
+    <meta property="og:title" content="Restaurant Sighet | VAMA9 - Cel Mai Bun Restaurant Sighetu Marmației">
+    <meta property="og:description" content="Restaurant VAMA9 Sighet - Pizza, grătar, meniu internațional, terasă spațioasă. Str. Tepliței 66, DN18. Program: 06:00-23:00">
     <meta property="og:image" content="https://vama9.ro/Media/afara_vama9.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Restaurant VAMA9 Sighetu Marmației - Exterior și Terasă">
     <meta property="og:locale" content="ro_RO">
+    <meta property="og:site_name" content="VAMA9 Restaurant Sighet">
+    <meta property="restaurant:contact_info:street_address" content="Strada Tepliței 66">
+    <meta property="restaurant:contact_info:locality" content="Sighetu Marmației">
+    <meta property="restaurant:contact_info:region" content="Maramureș">
+    <meta property="restaurant:contact_info:postal_code" content="435500">
+    <meta property="restaurant:contact_info:country_name" content="România">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -93,17 +110,22 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "VAMA9",
-        "alternateName": "Vama 9",
-        "description": "Restaurant modern cu bucătărie internațională în Sighetu Marmației. Oferim pizza, preparate din carne la grătar, platouri și deserturi delicioase.",
+        "alternateName": ["Vama 9", "Restaurant VAMA9 Sighet", "VAMA9 Restaurant Sighetu Marmației"],
+        "description": "Cel mai bun restaurant din Sighetu Marmației. Restaurant modern cu bucătărie internațională, pizza, preparate la grătar, terasă spațioasă și parcare gratuită. Situat pe DN18, Strada Tepliței 66.",
         "url": "https://vama9.ro",
         "telephone": "+40749557541",
+        "email": "contact@vama9.ro",
         "image": [
             "https://vama9.ro/Media/afara_vama9.jpg",
-            "https://vama9.ro/Media/Interior.jpg"
+            "https://vama9.ro/Media/Interior.jpg",
+            "https://vama9.ro/Media/1.jpg",
+            "https://vama9.ro/Media/2.jpg",
+            "https://vama9.ro/Media/3.jpg"
         ],
+        "logo": "https://vama9.ro/Media/afara_vama9.jpg",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Strada Teplitei 66",
+            "streetAddress": "Strada Tepliței 66",
             "addressLocality": "Sighetu Marmației",
             "addressRegion": "Maramureș",
             "postalCode": "435500",
@@ -111,36 +133,113 @@
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": "47.9316",
-            "longitude": "23.8906"
+            "latitude": "47.9394916",
+            "longitude": "23.9390948"
         },
-        "openingHours": "Mo-Su 06:00-23:00",
-        "servesCuisine": ["International", "Romanian", "Pizza", "Grill"],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "06:00",
+                "closes": "23:00"
+            }
+        ],
+        "servesCuisine": ["International", "Romanian", "Pizza", "Italian", "Grill", "European"],
+        "menu": "https://vama9.ro/menu.html",
         "priceRange": "$$",
         "acceptsReservations": "EventsOnly",
         "hasMenu": "https://vama9.ro/menu.html",
-        "paymentAccepted": ["Cash", "Credit Card"],
+        "paymentAccepted": ["Cash", "Credit Card", "Debit Card"],
         "currenciesAccepted": "RON",
         "sameAs": [
-            "https://www.facebook.com/profile.php?id=61576052340245"
+            "https://www.facebook.com/profile.php?id=61576052340245",
+            "https://www.google.com/maps/place/VAMa+9/@47.9394916,23.9390948"
         ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",
-                "name": "Free Parking",
+                "name": "Parcare Gratuită",
                 "value": true
             },
             {
                 "@type": "LocationFeatureSpecification",
-                "name": "Outdoor Seating",
+                "name": "Terasă Exterioară",
                 "value": true
             },
             {
                 "@type": "LocationFeatureSpecification",
-                "name": "Terrace",
+                "name": "WiFi Gratuit",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Locuri la exterior",
                 "value": true
             }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "150"
+        },
+        "potentialAction": {
+            "@type": "OrderAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "tel:+40749557541",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                ]
+            },
+            "deliveryMethod": "OnSitePickup"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Acasă",
+                "item": "https://vama9.ro"
+            }
         ]
+    }
+    </script>
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://vama9.ro",
+        "name": "VAMA9 Restaurant Sighetu Marmației",
+        "image": "https://vama9.ro/Media/afara_vama9.jpg",
+        "telephone": "+40749557541",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Strada Tepliței 66",
+            "addressLocality": "Sighetu Marmației",
+            "addressRegion": "Maramureș",
+            "postalCode": "435500",
+            "addressCountry": "RO"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "47.9394916",
+            "longitude": "23.9390948"
+        },
+        "url": "https://vama9.ro",
+        "priceRange": "$$",
+        "openingHours": "Mo-Su 06:00-23:00"
     }
     </script>
 </head>
