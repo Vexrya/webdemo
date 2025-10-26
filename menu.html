@@ -86,34 +86,10 @@
                     Meniul Restaurantului
                 </h1>
                 <p class="menu-subtitle">Toate prețurile sunt în RON</p>
-
-                <!-- Quick Filter Buttons -->
-                <div class="menu-quick-filters">
-                    <button class="filter-btn active" data-filter="all">
-                        <i class="fas fa-th"></i>
-                        Toate
-                    </button>
-                    <button class="filter-btn" data-filter="main">
-                        <i class="fas fa-drumstick-bite"></i>
-                        Feluri Principale
-                    </button>
-                    <button class="filter-btn" data-filter="pizza">
-                        <i class="fas fa-pizza-slice"></i>
-                        Pizza
-                    </button>
-                    <button class="filter-btn" data-filter="sides">
-                        <i class="fas fa-bread-slice"></i>
-                        Garnituri & Sosuri
-                    </button>
-                    <button class="filter-btn" data-filter="dessert">
-                        <i class="fas fa-ice-cream"></i>
-                        Desert
-                    </button>
-                </div>
             </div>
 
             <!-- Platouri Section -->
-            <section id="platouri" class="menu-category" data-category="main">
+            <section id="platouri" class="menu-category">
                 <div class="category-header">
                     <h2>
                         <i class="fas fa-utensils"></i>
@@ -151,7 +127,7 @@
             </section>
 
             <!-- Diverse Section -->
-            <section id="diverse" class="menu-category" data-category="sides">
+            <section id="diverse" class="menu-category">
                 <div class="category-header">
                     <h2>
                         <i class="fas fa-cheese"></i>
@@ -200,7 +176,7 @@
             </section>
 
             <!-- Garnituri Section -->
-            <section id="garnituri" class="menu-category" data-category="sides">
+            <section id="garnituri" class="menu-category">
                 <div class="category-header">
                     <h2>
                         <i class="fas fa-drumstick-bite"></i>
@@ -248,7 +224,7 @@
             </section>
 
             <!-- Pizza Section -->
-            <section id="pizza" class="menu-category" data-category="pizza">
+            <section id="pizza" class="menu-category">
                 <div class="category-header">
                     <h2>
                         <i class="fas fa-pizza-slice"></i>
@@ -370,7 +346,7 @@
             </section>
 
             <!-- Preparate din Porc Section -->
-            <section id="porc" class="menu-category" data-category="main">
+            <section id="porc" class="menu-category">
                 <div class="category-header">
                     <h2>
                         <i class="fas fa-bacon"></i>
@@ -478,7 +454,7 @@
             </section>
 
             <!-- Preparate din Pasăre Section -->
-            <section id="pasare" class="menu-category" data-category="main">
+            <section id="pasare" class="menu-category">
                 <div class="category-header">
                     <h2>
                         <i class="fas fa-drumstick-bite"></i>
@@ -586,7 +562,7 @@
             </section>
 
             <!-- Sosuri Section -->
-            <section id="sosuri" class="menu-category" data-category="sides">
+            <section id="sosuri" class="menu-category">
                 <div class="category-header">
                     <h2>
                         <i class="fas fa-pepper-hot"></i>
@@ -649,7 +625,7 @@
             </section>
 
             <!-- Salate Section -->
-            <section id="salate" class="menu-category" data-category="sides">
+            <section id="salate" class="menu-category">
                 <div class="category-header">
                     <h2>
                         <i class="fas fa-leaf"></i>
@@ -682,7 +658,7 @@
             </section>
 
             <!-- Desert Section -->
-            <section id="desert" class="menu-category" data-category="dessert">
+            <section id="desert" class="menu-category">
                 <div class="category-header">
                     <h2>
                         <i class="fas fa-ice-cream"></i>
@@ -747,39 +723,6 @@
                 </div>
             </section>
 
-            <!-- Contact Info -->
-            <div class="menu-footer-info">
-                <div class="info-card">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <strong>Evenimente Speciale</strong>
-                        <a href="tel:+40749557541">+40 749 557 541</a>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <strong>Program</strong>
-                        <span>Zilnic: 06:00 - 23:00</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA to Main Site -->
-            <div class="menu-back-cta">
-                <h3>Pregătit să ne vizitezi?</h3>
-                <p>Descoperă atmosfera VAMA9 și locația noastră</p>
-                <div class="back-cta-buttons">
-                    <a href="index.html#contact" class="btn btn-primary">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Vezi Locația
-                    </a>
-                    <a href="index.html#gallery" class="btn btn-outline">
-                        <i class="fas fa-images"></i>
-                        Galerie Foto
-                    </a>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -829,52 +772,6 @@
             } else {
                 nav.classList.remove('sticky');
             }
-        });
-
-        // Menu filtering functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const menuSections = document.querySelectorAll('.menu-category');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const filter = this.dataset.filter;
-
-                // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-
-                // Filter sections
-                menuSections.forEach(section => {
-                    if (filter === 'all') {
-                        section.style.display = 'block';
-                        setTimeout(() => {
-                            section.style.opacity = '1';
-                            section.style.transform = 'translateY(0)';
-                        }, 10);
-                    } else if (section.dataset.category === filter) {
-                        section.style.display = 'block';
-                        setTimeout(() => {
-                            section.style.opacity = '1';
-                            section.style.transform = 'translateY(0)';
-                        }, 10);
-                    } else {
-                        section.style.opacity = '0';
-                        section.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            section.style.display = 'none';
-                        }, 300);
-                    }
-                });
-
-                // Scroll to top of menu
-                const menuContainer = document.querySelector('.menu-container');
-                if (menuContainer) {
-                    window.scrollTo({
-                        top: menuContainer.offsetTop - 150,
-                        behavior: 'smooth'
-                    });
-                }
-            });
         });
     </script>
 </body>

@@ -1204,64 +1204,6 @@ section {
     transform: translateY(-2px);
 }
 
-/* Category Links Grid */
-.menu-category-links {
-    margin-top: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(5, 150, 105, 0.03) 0%, rgba(52, 211, 153, 0.05) 100%);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--light-grey);
-}
-
-.category-links-title {
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--dark-grey);
-    margin-bottom: 1.5rem;
-}
-
-.category-links-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-}
-
-.category-link-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1.25rem 1rem;
-    background: var(--white);
-    border: 2px solid var(--light-grey);
-    border-radius: var(--radius-md);
-    text-decoration: none;
-    color: var(--dark-grey);
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: var(--transition-base);
-    text-align: center;
-}
-
-.category-link-card i {
-    font-size: 1.75rem;
-    color: var(--accent-primary);
-    transition: var(--transition-base);
-}
-
-.category-link-card:hover {
-    border-color: var(--accent-primary);
-    background: linear-gradient(135deg, rgba(5, 150, 105, 0.05) 0%, rgba(52, 211, 153, 0.08) 100%);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-.category-link-card:hover i {
-    transform: scale(1.15);
-    color: var(--accent-primary-dark);
-}
-
 /* =====================================
    GALLERY SECTION - STANDARDIZED GRID
    ===================================== */
@@ -1437,6 +1379,55 @@ section {
     border: 2px solid var(--light-grey);
     border-radius: var(--radius-md);
     overflow: hidden;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(5, 150, 105, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-base);
+    pointer-events: none;
+}
+
+.map-container:hover .map-overlay {
+    background: rgba(5, 150, 105, 0.15);
+}
+
+.map-overlay-content {
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-base);
+}
+
+.map-container:hover .map-overlay-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-overlay-content i {
+    font-size: 2rem;
+    color: var(--accent-primary);
+}
+
+.map-overlay-content p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--dark-grey);
+    font-size: 1rem;
 }
 
 .map-placeholder {

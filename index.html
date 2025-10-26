@@ -517,37 +517,6 @@
                         <span data-translate="menu_cta_button">Vezi Meniul Complet</span>
                     </a>
                 </div>
-
-                <!-- Quick Category Links -->
-                <div class="menu-category-links">
-                    <p class="category-links-title">Explorează pe categorii:</p>
-                    <div class="category-links-grid">
-                        <a href="menu.html#platouri" class="category-link-card">
-                            <i class="fas fa-utensils"></i>
-                            <span>Platouri</span>
-                        </a>
-                        <a href="menu.html#pizza" class="category-link-card">
-                            <i class="fas fa-pizza-slice"></i>
-                            <span>Pizza</span>
-                        </a>
-                        <a href="menu.html#porc" class="category-link-card">
-                            <i class="fas fa-bacon"></i>
-                            <span>Preparate Porc</span>
-                        </a>
-                        <a href="menu.html#pasare" class="category-link-card">
-                            <i class="fas fa-drumstick-bite"></i>
-                            <span>Preparate Pasăre</span>
-                        </a>
-                        <a href="menu.html#desert" class="category-link-card">
-                            <i class="fas fa-ice-cream"></i>
-                            <span>Desert</span>
-                        </a>
-                        <a href="menu.html#garnituri" class="category-link-card">
-                            <i class="fas fa-bread-slice"></i>
-                            <span>Garnituri</span>
-                        </a>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -665,17 +634,23 @@
                     </div>
                     
                     <div class="contact-map">
-                        <div class="map-container">
+                        <div class="map-container" onclick="openMap()" style="cursor: pointer;">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d681.5895808947185!2d23.938857769698177!3d47.939129400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4737bbfe90e20f49%3A0xfca2fca726822577!2sVAMa%209!5e0!3m2!1sen!2sro!4v1709823456789!5m2!1sen!2sro"
                                 width="600"
                                 height="450"
-                                style="border:0; width: 100%; height: 100%; border-radius: 12px;"
+                                style="border:0; width: 100%; height: 100%; border-radius: 12px; pointer-events: none;"
                                 allowfullscreen=""
                                 loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"
                                 title="Locația restaurantului VAMA9 pe Google Maps">
                             </iframe>
+                            <div class="map-overlay">
+                                <div class="map-overlay-content">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <p>Click pentru direcții</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
