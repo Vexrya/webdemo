@@ -71,16 +71,16 @@ const utils = {
 const translations = {
     ro: {
         // Navigation
-        nav_home: 'Acasă', nav_about: 'Despre', nav_menu: 'Meniu', 
-        nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Rezervări',
-        
+        nav_home: 'Acasă', nav_about: 'Despre', nav_menu: 'Meniu',
+        nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Evenimente',
+
         // Hero Section
         hero_tagline: 'Unde fiecare masă devine artă',
         hero_headline_line1: 'Savurează',
         hero_headline_line2: 'Momentul',
         hero_menu: 'Meniul',
-        hero_gallery: 'Gallery',
-        hero_scroll: 'Scroll',
+        hero_gallery: 'Galerie',
+        hero_scroll: 'Derulează',
         
         // About Section
         about_badge: 'POVESTEA NOASTRĂ', about_title: 'Un Loc de Întâlnire Modern',
@@ -133,8 +133,8 @@ const translations = {
     },
     en: {
         // Navigation
-        nav_home: 'Home', nav_about: 'About', nav_menu: 'Menu', 
-        nav_gallery: 'Gallery', nav_contact: 'Contact', nav_reserve: 'Reservations',
+        nav_home: 'Home', nav_about: 'About', nav_menu: 'Menu',
+        nav_gallery: 'Gallery', nav_contact: 'Contact', nav_reserve: 'Events',
         
         // Hero Section
         hero_tagline: 'Where every meal becomes art',
@@ -195,8 +195,8 @@ const translations = {
     },
     fr: {
         // Navigation
-        nav_home: 'Accueil', nav_about: 'À propos', nav_menu: 'Menu', 
-        nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Réservations',
+        nav_home: 'Accueil', nav_about: 'À propos', nav_menu: 'Menu',
+        nav_gallery: 'Galerie', nav_contact: 'Contact', nav_reserve: 'Événements',
         
         // Hero Section
         hero_tagline: 'Où chaque repas devient art',
