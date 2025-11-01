@@ -520,7 +520,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Media/afara_vama9.jpeg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Media/afara_vama9.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2476,5 +2476,6 @@ section {
 /* =====================================
    END OF OPTIMIZED STYLES
    ===================================== */
+
 
 
