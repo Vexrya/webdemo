@@ -30,16 +30,19 @@
     <meta name="geo.position" content="47.9316;23.8906">
     <meta name="ICBM" content="47.9316, 23.8906">
     
-    <!-- Preconnect to external domains -->
+    <!-- Optimized preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Fonts with font-display swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome with defer -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.google.com">
+    <link rel="dns-prefetch" href="https://maps.googleapis.com">
+
+    <!-- Optimized fonts with font-display swap and subset -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Font Awesome - defer loading -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Critical CSS inlined, full CSS loaded async -->
@@ -83,8 +86,23 @@
                 }
             }
         }
+        /* Optimize font rendering */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        /* Hide fouc */
+        .hero-content, .nav-menu {
+            opacity: 0;
+            animation: fadeIn 0.3s ease-in forwards;
+            animation-delay: 0.1s;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
     </style>
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="styles.css" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
     
     <!-- Structured Data for Restaurant -->
@@ -276,19 +294,19 @@
                     <div class="about-visual">
                         <div class="visual-grid">
                             <div class="visual-item large">
-                                <img src="Media/Interior.jpg" alt="Interiorul modern al restaurantului VAMA9" width="600" height="800" loading="lazy">
+                                <img src="Media/Interior.jpg" alt="Interiorul modern al restaurantului VAMA9" width="800" height="1067" loading="lazy" decoding="async">
                                 <div class="visual-overlay">
                                     <span data-translate="about_interior">Interior Modern</span>
                                 </div>
                             </div>
                             <div class="visual-item">
-                                <img src="Media/afara_vama9.jpg" alt="Terasa exterioară VAMA9" width="600" height="400" loading="lazy">
+                                <img src="Media/afara_vama9.jpg" alt="Terasa exterioară VAMA9" width="800" height="600" loading="lazy" decoding="async">
                                 <div class="visual-overlay">
                                     <span data-translate="about_terrace">Terasă</span>
                                 </div>
                             </div>
                             <div class="visual-item">
-                                <img src="Media/3.jpg" alt="Preparate culinare la VAMA9" width="600" height="400" loading="lazy">
+                                <img src="Media/3.jpg" alt="Preparate culinare la VAMA9" width="800" height="600" loading="lazy" decoding="async">
                                 <div class="visual-overlay">
                                     <span data-translate="about_food">Mâncare</span>
                                 </div>
@@ -464,49 +482,49 @@
                 
                 <div class="gallery-grid" role="img" aria-label="Galerie foto VAMA9">
                     <div class="gallery-item tall" role="button" tabindex="0" aria-label="Deschide imaginea interiorului modern">
-                        <img src="Media/Interior.jpg" alt="Interiorul modern al restaurantului VAMA9 cu design contemporan" loading="lazy">
+                        <img src="Media/Interior.jpg" alt="Interiorul modern al restaurantului VAMA9 cu design contemporan" width="800" height="1067" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea exteriorului">
-                        <img src="Media/afara_vama9.jpg" alt="Exteriorul și terasa restaurantului VAMA9" loading="lazy">
+                        <img src="Media/afara_vama9.jpg" alt="Exteriorul și terasa restaurantului VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea cu mâncare">
-                        <img src="Media/1.jpg" alt="Preparate culinare delicioase la VAMA9" loading="lazy">
+                        <img src="Media/1.jpg" alt="Preparate culinare delicioase la VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item wide" role="button" tabindex="0" aria-label="Deschide imaginea cu masa și servirea">
-                        <img src="Media/2.jpg" alt="Atmosfera de dining și servirea la VAMA9" loading="lazy">
+                        <img src="Media/2.jpg" alt="Atmosfera de dining și servirea la VAMA9" width="800" height="533" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea cu bucătăria">
-                        <img src="Media/3.jpg" alt="Bucătăria și preparatele VAMA9" loading="lazy">
+                        <img src="Media/3.jpg" alt="Bucătăria și preparatele VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea cu specialitățile">
-                        <img src="Media/5.jpg" alt="Specialitățile casei la VAMA9" loading="lazy">
+                        <img src="Media/5.jpg" alt="Specialitățile casei la VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea cu specialitățile">
-                        <img src="Media/6.jpg" alt="Specialitățile casei la VAMA9" loading="lazy">
+                        <img src="Media/6.jpg" alt="Specialitățile casei la VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea cu specialitățile">
-                        <img src="Media/8.jpg" alt="Specialitățile casei la VAMA9" loading="lazy">
+                        <img src="Media/8.jpg" alt="Specialitățile casei la VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>

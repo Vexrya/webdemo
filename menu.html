@@ -7,18 +7,52 @@
     <meta name="description" content="Meniul complet al restaurantului VAMA9 - Pizza, preparate din porc, pasăre, platouri și desert. Prețuri actualizate.">
     <meta name="robots" content="index, follow">
 
-    <!-- Preconnect -->
+    <!-- Optimized preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Optimized fonts with preload -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="menu-page.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Styles with preload and priority -->
+    <link rel="preload" href="styles.css" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="menu-page.css" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="menu-page.css">
+    </noscript>
+
+    <!-- Inline critical CSS for menu page -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .menu-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            z-index: 100;
+            height: 65px;
+        }
+        .category-nav {
+            position: fixed;
+            top: 65px;
+            width: 100%;
+            background: #f9fafb;
+            z-index: 99;
+        }
+        .menu-page-content {
+            padding-top: 140px;
+        }
+    </style>
 </head>
 <body>
     <!-- Minimal Header for Menu Page -->
