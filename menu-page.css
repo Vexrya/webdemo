@@ -50,7 +50,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #059669;
+    color: #047857;
     text-decoration: none;
     font-weight: 600;
     padding: 0.75rem 1.25rem;
@@ -60,7 +60,7 @@ body {
 }
 
 .back-home:hover {
-    background: rgba(5, 150, 105, 0.1);
+    background: rgba(4, 120, 87, 0.1);
 }
 
 .back-home i {
@@ -80,7 +80,7 @@ body {
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    scrollbar-color: #059669 #e5e7eb;
+    scrollbar-color: #047857 #e5e7eb;
 }
 
 /* Custom scrollbar for webkit browsers (Chrome, Safari, Edge) */
@@ -94,13 +94,13 @@ body {
 }
 
 .category-nav::-webkit-scrollbar-thumb {
-    background: #059669;
+    background: #047857;
     border-radius: 3px;
     transition: background 0.2s;
 }
 
 .category-nav::-webkit-scrollbar-thumb:hover {
-    background: #047857;
+    background: #065f46;
 }
 
 .category-nav.sticky {
@@ -158,14 +158,14 @@ body {
 
 .cat-link i {
     font-size: 1.25rem;
-    color: #059669;
+    color: #047857;
 }
 
 .cat-link:hover,
 .cat-link:active {
-    background: #059669;
+    background: #047857;
     color: #fff;
-    border-color: #059669;
+    border-color: #047857;
 }
 
 .cat-link:hover i,
@@ -210,7 +210,7 @@ body {
 }
 
 .menu-page-header h1 i {
-    color: #059669;
+    color: #047857;
 }
 
 .menu-subtitle {
@@ -226,12 +226,12 @@ body {
 }
 
 .category-header {
-    background: linear-gradient(135deg, #059669 0%, #34d399 100%);
+    background: linear-gradient(135deg, #047857 0%, #059669 100%);
     color: #fff;
     padding: 1rem 1.25rem;
     border-radius: 12px;
     margin-bottom: 1.25rem;
-    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+    box-shadow: 0 4px 12px rgba(4, 120, 87, 0.2);
 }
 
 .category-header h2 {
@@ -255,13 +255,13 @@ body {
 }
 
 .menu-item-card:hover {
-    border-color: #059669;
-    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);
+    border-color: #047857;
+    box-shadow: 0 4px 12px rgba(4, 120, 87, 0.1);
 }
 
 .menu-item-card.featured {
-    border-color: #059669;
-    background: linear-gradient(135deg, rgba(5, 150, 105, 0.03) 0%, rgba(52, 211, 153, 0.05) 100%);
+    border-color: #047857;
+    background: linear-gradient(135deg, rgba(4, 120, 87, 0.03) 0%, rgba(5, 150, 105, 0.05) 100%);
 }
 
 .item-header {
@@ -284,7 +284,7 @@ body {
 .item-price {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.5rem;
-    color: #059669;
+    color: #047857;
     font-weight: 400;
     white-space: nowrap;
     letter-spacing: 0.5px;
@@ -341,7 +341,7 @@ body {
 }
 
 .table-row:hover {
-    background: rgba(5, 150, 105, 0.03);
+    background: rgba(4, 120, 87, 0.03);
 }
 
 .table-cell {
@@ -356,7 +356,7 @@ body {
 .table-cell.item-price {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.25rem;
-    color: #059669;
+    color: #047857;
     font-weight: 400;
 }
 
@@ -375,7 +375,7 @@ body {
 
 .info-card i {
     font-size: 2rem;
-    color: #059669;
+    color: #047857;
 }
 
 .info-card div {
@@ -398,7 +398,7 @@ body {
 }
 
 .info-card a:hover {
-    color: #059669;
+    color: #047857;
     text-decoration: underline;
 }
 
@@ -553,7 +553,7 @@ body {
     }
 
     .category-header {
-        background: #059669;
+        background: #047857;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }

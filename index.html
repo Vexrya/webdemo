@@ -86,20 +86,34 @@
                 }
             }
         }
-        /* Optimize font rendering */
+        /* Optimize font rendering with fallback metrics */
         body {
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
         }
-        /* Hide fouc */
-        .hero-content, .nav-menu {
-            opacity: 0;
-            animation: fadeIn 0.3s ease-in forwards;
-            animation-delay: 0.1s;
+        /* Font fallback with size-adjust to prevent CLS */
+        @font-face {
+            font-family: 'Inter Fallback';
+            src: local('Arial');
+            size-adjust: 107%;
+            ascent-override: 90%;
+            descent-override: 22%;
+            line-gap-override: 0%;
         }
-        @keyframes fadeIn {
-            to { opacity: 1; }
+        @font-face {
+            font-family: 'Bebas Fallback';
+            src: local('Impact');
+            size-adjust: 95%;
+            ascent-override: 100%;
+            descent-override: 20%;
+            line-gap-override: 0%;
+        }
+        body {
+            font-family: 'Inter Fallback', Arial, sans-serif;
+        }
+        .brand-text, .hero-headline, h1, h2, .section-title {
+            font-family: 'Bebas Fallback', Impact, sans-serif;
         }
     </style>
     <link rel="preload" href="styles.css" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
