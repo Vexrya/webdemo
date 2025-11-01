@@ -690,7 +690,7 @@ a {
 /* Scroll Indicator */
 .hero-scroll-indicator {
   position: absolute;
-  bottom: var(--spacing-xl);
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
@@ -2476,4 +2476,5 @@ section {
 /* =====================================
    END OF OPTIMIZED STYLES
    ===================================== */
+
 
