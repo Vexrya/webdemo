@@ -79,15 +79,52 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    scrollbar-color: #059669 #e5e7eb;
 }
 
+/* Custom scrollbar for webkit browsers (Chrome, Safari, Edge) */
 .category-nav::-webkit-scrollbar {
-    display: none;
+    height: 6px;
+}
+
+.category-nav::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 3px;
+}
+
+.category-nav::-webkit-scrollbar-thumb {
+    background: #059669;
+    border-radius: 3px;
+    transition: background 0.2s;
+}
+
+.category-nav::-webkit-scrollbar-thumb:hover {
+    background: #047857;
 }
 
 .category-nav.sticky {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Fade gradient on right edge to indicate scrollable content */
+.category-nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    background: linear-gradient(to left, #f9fafb 0%, rgba(249, 250, 251, 0) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Hide gradient on desktop when content doesn't overflow */
+@media (min-width: 1200px) {
+    .category-nav::after {
+        display: none;
+    }
 }
 
 .category-nav-container {
@@ -97,6 +134,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     min-width: min-content;
+    position: relative;
 }
 
 .cat-link {
