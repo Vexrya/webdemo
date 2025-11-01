@@ -30,33 +30,57 @@
     <meta name="geo.position" content="47.9316;23.8906">
     <meta name="ICBM" content="47.9316, 23.8906">
     
-    <!-- Preconnect to external domains -->
+    <!-- Preconnect to external domains - early hints for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Fonts with font-display swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome with defer -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="dns-prefetch" href="https://maps.googleapis.com">
+    <link rel="dns-prefetch" href="https://maps.gstatic.com">
+
+    <!-- Non-blocking font loading with font-display optional for better performance -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&display=optional" rel="stylesheet"></noscript>
+
+    <!-- Font Awesome with async loading and font-display swap -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Critical CSS inlined, full CSS loaded async -->
     <style>
-        /* Critical CSS - Above the fold styles */
+        /* Critical CSS - Above the fold styles with CLS prevention */
         :root {
             --black: #0f0f0f;
             --white: #ffffff;
             --accent-primary: #059669;
-            --font-display: 'Bebas Neue', sans-serif;
-            --font-body: 'Inter', sans-serif;
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
         }
+
+        /* Fallback font metrics to prevent CLS */
+        @font-face {
+            font-family: 'Bebas Neue Fallback';
+            src: local('Arial Black'), local('Arial');
+            ascent-override: 115%;
+            descent-override: 28%;
+            line-gap-override: 0%;
+            size-adjust: 86%;
+        }
+
+        @font-face {
+            font-family: 'Inter Fallback';
+            src: local('Arial'), local('Helvetica');
+            ascent-override: 90%;
+            descent-override: 22%;
+            line-gap-override: 0%;
+            size-adjust: 107%;
+        }
+
         body {
             font-family: var(--font-body);
             margin: 0;
             overflow-x: hidden;
         }
+
         .navbar {
             position: fixed;
             top: 0;
@@ -64,23 +88,62 @@
             z-index: 1000;
             background: var(--white);
             height: 80px;
+            contain: layout style paint;
         }
+
+        /* Nav CTA - reserve space to prevent shift */
+        .nav-cta-large {
+            min-width: 150px;
+            height: 48px;
+            padding: 0.75rem 1.75rem;
+            box-sizing: border-box;
+        }
+
         .hero {
             min-height: 100vh;
             padding-top: 80px;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
+            contain: layout style paint;
         }
+
+        /* Reserve space for hero content to prevent CLS */
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-headline {
+            font-family: var(--font-display);
+            /* Reserve space for large headline */
+            min-height: 200px;
+            line-height: 0.9;
+            font-size: clamp(4rem, 15vw, 12rem);
+        }
+
+        .hero-tagline {
+            min-height: 24px;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+        }
+
         /* Mobile viewport height fix */
         @media (max-width: 768px) {
             .hero {
-                min-height: 100svh; /* Use small viewport height on mobile */
+                min-height: 100svh;
             }
             @supports not (height: 100svh) {
                 .hero {
                     min-height: calc(var(--vh, 1vh) * 100);
                 }
+            }
+            .hero-headline {
+                min-height: 150px;
+                font-size: clamp(3rem, 18vw, 6rem);
             }
         }
     </style>
@@ -276,19 +339,34 @@
                     <div class="about-visual">
                         <div class="visual-grid">
                             <div class="visual-item large">
-                                <img src="Media/Interior.webp" alt="Interiorul modern al restaurantului VAMA9" width="600" height="800" loading="lazy">
+                                <img src="Media/Interior.webp"
+                                     alt="Interiorul modern al restaurantului VAMA9"
+                                     width="600"
+                                     height="800"
+                                     loading="lazy"
+                                     decoding="async">
                                 <div class="visual-overlay">
                                     <span data-translate="about_interior">Interior Modern</span>
                                 </div>
                             </div>
                             <div class="visual-item">
-                                <img src="Media/afara_vama9.webp" alt="Terasa exterioară VAMA9" width="600" height="400" loading="lazy">
+                                <img src="Media/afara_vama9.webp"
+                                     alt="Terasa exterioară VAMA9"
+                                     width="600"
+                                     height="400"
+                                     loading="lazy"
+                                     decoding="async">
                                 <div class="visual-overlay">
                                     <span data-translate="about_terrace">Terasă</span>
                                 </div>
                             </div>
                             <div class="visual-item">
-                                <img src="Media/3.webp" alt="Preparate culinare la VAMA9" width="600" height="400" loading="lazy">
+                                <img src="Media/3.webp"
+                                     alt="Preparate culinare la VAMA9"
+                                     width="600"
+                                     height="400"
+                                     loading="lazy"
+                                     decoding="async">
                                 <div class="visual-overlay">
                                     <span data-translate="about_food">Mâncare</span>
                                 </div>
@@ -464,49 +542,49 @@
                 
                 <div class="gallery-grid" role="img" aria-label="Galerie foto VAMA9">
                     <div class="gallery-item tall" role="button" tabindex="0" aria-label="Deschide imaginea interiorului modern">
-                        <img src="Media/Interior.webp" alt="Interiorul modern al restaurantului VAMA9 cu design contemporan" loading="lazy">
+                        <img src="Media/Interior.webp" alt="Interiorul modern al restaurantului VAMA9 cu design contemporan" width="600" height="800" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea exteriorului">
-                        <img src="Media/afara_vama9.webp" alt="Exteriorul și terasa restaurantului VAMA9" loading="lazy">
+                        <img src="Media/afara_vama9.webp" alt="Exteriorul și terasa restaurantului VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea cu mâncare">
-                        <img src="Media/1.webp" alt="Preparate culinare delicioase la VAMA9" loading="lazy">
+                        <img src="Media/1.webp" alt="Preparate culinare delicioase la VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item wide" role="button" tabindex="0" aria-label="Deschide imaginea cu masa și servirea">
-                        <img src="Media/2.webp" alt="Atmosfera de dining și servirea la VAMA9" loading="lazy">
+                        <img src="Media/2.webp" alt="Atmosfera de dining și servirea la VAMA9" width="1200" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea cu bucătăria">
-                        <img src="Media/3.webp" alt="Bucătăria și preparatele VAMA9" loading="lazy">
+                        <img src="Media/3.webp" alt="Bucătăria și preparatele VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea cu specialitățile">
-                        <img src="Media/5.webp" alt="Specialitățile casei la VAMA9" loading="lazy">
+                        <img src="Media/5.webp" alt="Specialitățile casei la VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea cu specialitățile">
-                        <img src="Media/6.webp" alt="Specialitățile casei la VAMA9" loading="lazy">
+                        <img src="Media/6.webp" alt="Specialitățile casei la VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="gallery-item" role="button" tabindex="0" aria-label="Deschide imaginea cu specialitățile">
-                        <img src="Media/8.webp" alt="Specialitățile casei la VAMA9" loading="lazy">
+                        <img src="Media/8.webp" alt="Specialitățile casei la VAMA9" width="800" height="600" loading="lazy" decoding="async">
                         <div class="gallery-overlay">
                             <i class="fas fa-expand" aria-hidden="true"></i>
                         </div>
